@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Siddhi Organics</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- SheetJS library for exporting table data to Excel if needed -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <style>
+    :root {
+      --brand-green-dark: #142917;
+      --brand-forest: #1b4332;
+      --card-border: #bcd3aa;
+      --btn-green: #234d28;
+      --btn-green-hover: #16361a;
+      --cta-lime: #8ac926;
+      --cta-lime-hover: #76b01e;
+      --text-dark: #132415;
+      --text-muted: #2f4531;
+      --footer-bg: #0d1e10;
+      --footer-text: #c2d1c4;
+      --footer-heading: #ffffff;
+      --white: #ffffff;
+      --shadow-card: 0 12px 28px rgba(27, 56, 30, 0.16);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #d3e5cd 0%, #b8d0ac 35%, #9cb88c 70%, #85a374 100%);
+      color: var(--text-dark);
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(211, 229, 205, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .brand-group img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-title-box h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--brand-green-dark);
+      line-height: 1.1;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .brand-title-box p {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 0.8px;
+      color: var(--brand-green-dark);
+      text-transform: uppercase;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .nav-menu a:hover, .nav-menu a.active {
+      color: #000;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      color: var(--brand-green-dark);
+      cursor: pointer;
+    }
+
+    /* Admin Content */
+    .admin-section {
+      padding: 50px 0;
+    }
+
+    .admin-header-box {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 36px;
+      border: 1.5px solid var(--card-border);
+      box-shadow: var(--shadow-card);
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .admin-title h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--brand-green-dark);
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .admin-title p {
+      font-size: 0.92rem;
+      color: #314834;
+    }
+
+    .admin-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-admin-action {
+      background-color: var(--btn-green);
+      color: var(--white);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(35, 77, 40, 0.2);
+    }
+
+    .btn-admin-action:hover {
+      background-color: var(--btn-green-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Data Table Card */
+    .table-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+      border: 1.5px solid #dbe6d5;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #e5ede0;
+    }
+
+    th {
+      background: #f4f9f0;
+      color: var(--brand-green-dark);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      color: #2e4432;
+      font-weight: 500;
+    }
+
+    tr:hover td {
+      background: #fbfdf9;
+    }
+
+    .loading-row, .no-data {
+      text-align: center;
+      padding: 40px;
+      color: #55755b;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 30px 0;
+      margin-top: 40px;
+    }
+
+    .footer-bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: #7b947f;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        width: 100%;
+        background: #c7dec1;
+        padding: 20px;
+        border-bottom: 1px solid #a4c28f;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+      .nav-menu.open {
+        display: flex;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .admin-header-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .admin-actions {
+        width: 100%;
+      }
+      .btn-admin-action {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand-group">
+        <img src="siddhi asset/siddhi-farm-logo.png" alt="Siddhi Organics Logo" />
+        <div class="brand-title-box">
+          <h2>Siddhi Organics</h2>
+          <p>Admin Portal</p>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Form</a></li>
+        <li><a href="admin.html" class="active">Admin Dashboard</a></li>
+      </ul>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Admin Main Section -->
+  <main class="admin-section">
+    <div class="container">
+      
+      <div class="admin-header-box">
+        <div class="admin-title">
+          <h1><i class="fas fa-shield-halved" style="color: var(--btn-green);"></i> Live Inquiries Management</h1>
+          <p>Review customer inquiries fetched in real-time from your connected Google Sheet database.</p>
+        </div>
+        <div class="admin-actions">
+          <button class="btn-admin-action" onclick="fetchLiveInquiries()">
+            <i class="fas fa-rotate"></i> Refresh Table
+          </button>
+          <button class="btn-admin-action" onclick="exportTableToExcel()">
+            <i class="fas fa-file-excel"></i> Export to Excel
+          </button>
+        </div>
+      </div>
+
+      <!-- Data Table View -->
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Full Name</th>
+              <th>Phone Number</th>
+              <th>Product Requirement</th>
+              <th>Message / Details</th>
+            </tr>
+          </thead>
+          <tbody id="inquiriesTableBody">
+            <tr><td colspan="5" class="loading-row"><i class="fas fa-spinner fa-spin"></i> Fetching live inquiries from cloud...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 Siddhi Organics. Admin Portal. All Rights Reserved.</div>
+        <div>Wavadade, Tal. & Dist. Jalgaon, Maharashtra</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    mobileBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    // REPLACE WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzrADe8HG_SEs31PhFUDWSt7vtnLJoDn5IZCOLiZLPb8WaTJ4DuNOpMugUQkxig3xbIkg/exec';
+    let cachedData = [];
+
+    // Fetch data from Google Sheet on load
+    function fetchLiveInquiries() {
+      const tbody = document.getElementById('inquiriesTableBody');
+      tbody.innerHTML = `<tr><td colspan="5" class="loading-row"><i class="fas fa-spinner fa-spin"></i> Refreshing data...</td></tr>`;
+
+      fetch(scriptURL)
+        .then(response => response.json())
+        .then(data => {
+          cachedData = data;
+          if (data.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="5" class="no-data"><i class="fas fa-folder-open" style="font-size: 1.5rem; margin-bottom: 8px; display: block;"></i> No customer inquiries found in Google Sheet.</td></tr>`;
+            return;
+          }
+
+          tbody.innerHTML = data.map(item => `
+            <tr>
+              <td>${item["Timestamp"] || '-'}</td>
+              <td><strong>${item["Full Name"] || '-'}</strong></td>
+              <td><a href="tel:${item["Phone Number"]}" style="color: var(--btn-green); font-weight: 700;"><i class="fas fa-phone-alt"></i> ${item["Phone Number"] || '-'}</a></td>
+              <td><span style="background: #e8f5e9; color: #1b4332; padding: 4px 10px; border-radius: 50px; font-size: 0.8rem; font-weight: 700;">${item["Product Requirement"] || '-'}</span></td>
+              <td>${item["Message"] || '-'}</td>
+            </tr>
+          `).join('');
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+          tbody.innerHTML = `<tr><td colspan="5" class="no-data" style="color: #d32f2f;"><i class="fas fa-triangle-exclamation"></i> Error loading data. Please check your Script URL connection.</td></tr>`;
+        });
+    }
+
+    // Export current loaded table data to Excel file
+    function exportTableToExcel() {
+      if (cachedData.length === 0) {
+        alert("No records to export!");
+        return;
+      }
+      const worksheet = XLSX.utils.json_to_sheet(cachedData);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Customer Inquiries");
+      XLSX.writeFile(workbook, "contacts_live.xlsx");
+    }
+
+    window.addEventListener('DOMContentLoaded', fetchLiveInquiries);
+  </script>
+</body>
+</html>

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Siddhi Organics</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --brand-green-dark: #142917;
+      --brand-forest: #1b4332;
+      --card-border: #bcd3aa;
+      --btn-green: #234d28;
+      --btn-green-hover: #16361a;
+      --cta-lime: #8ac926;
+      --cta-lime-hover: #76b01e;
+      --text-dark: #132415;
+      --text-muted: #2f4531;
+      --footer-bg: #0d1e10;
+      --footer-text: #c2d1c4;
+      --footer-heading: #ffffff;
+      --white: #ffffff;
+      --shadow-card: 0 12px 28px rgba(27, 56, 30, 0.16);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #d3e5cd 0%, #b8d0ac 35%, #9cb88c 70%, #85a374 100%);
+      color: var(--text-dark);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(211, 229, 205, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .brand-group img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-title-box h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--brand-green-dark);
+      line-height: 1.1;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .brand-title-box p {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 0.8px;
+      color: var(--brand-green-dark);
+      text-transform: uppercase;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .nav-menu a:hover, .nav-menu a.active {
+      color: #000;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      color: var(--brand-green-dark);
+      cursor: pointer;
+    }
+
+    /* Contact Layout */
+    .contact-header-section {
+      text-align: center;
+      padding: 40px 0 20px;
+    }
+
+    .contact-title {
+      font-size: clamp(2rem, 3.8vw, 2.8rem);
+      font-weight: 900;
+      color: var(--brand-green-dark);
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .contact-subtitle {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #213d24;
+      margin-bottom: 30px;
+    }
+
+    .contact-main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .contact-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 26px;
+      border: 1.5px solid var(--card-border);
+      box-shadow: var(--shadow-card);
+    }
+
+    .info-card h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--brand-green-dark);
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .info-card h3 i {
+      color: var(--btn-green);
+    }
+
+    .info-card p, .info-card li {
+      font-size: 0.92rem;
+      color: #314834;
+      line-height: 1.6;
+    }
+
+    .info-card ul {
+      list-style: none;
+    }
+
+    .info-card li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .info-card li i {
+      color: var(--cta-lime);
+      margin-top: 4px;
+    }
+
+    .contact-form-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+      border: 1.5px solid #dbe6d5;
+    }
+
+    .contact-form-card h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--brand-green-dark);
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 6px;
+    }
+
+    .contact-form-card p {
+      font-size: 0.88rem;
+      color: #55755b;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--brand-green-dark);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1.5px solid #cce0c2;
+      background: #fbfdf9;
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      border-color: var(--btn-green);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(35, 77, 40, 0.1);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .btn-submit-excel {
+      background-color: var(--btn-green);
+      color: var(--white);
+      border: none;
+      width: 100%;
+      padding: 14px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 6px 18px rgba(35, 77, 40, 0.25);
+      margin-top: 6px;
+    }
+
+    .btn-submit-excel:hover {
+      background-color: var(--btn-green-hover);
+      transform: translateY(-2px);
+    }
+
+    .success-alert {
+      display: none;
+      background: #e8f5e9;
+      border: 1px solid #a5d6a7;
+      color: #1b4332;
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 80px 0 30px;
+    }
+
+    .footer-main-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr 0.9fr 1.1fr 1.3fr;
+      gap: 36px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h4 {
+      color: var(--footer-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .footer-brand-wrap img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 16px;
+      background: #ffffff;
+      padding: 4px 8px;
+      border-radius: 8px;
+    }
+
+    .footer-brand-wrap p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .footer-social-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social-icons a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #1a3820;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-social-icons a:hover {
+      background-color: var(--cta-lime);
+      color: #0d1e10;
+      transform: translateY(-2px);
+    }
+
+    .footer-nav-list, .footer-contact-list {
+      list-style: none;
+    }
+
+    .footer-nav-list li, .footer-contact-list li {
+      margin-bottom: 12px;
+      font-size: 0.88rem;
+    }
+
+    .footer-contact-list i {
+      color: var(--cta-lime);
+      margin-right: 8px;
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: #7b947f;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 1150px) {
+      .footer-main-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .contact-main-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-main-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        width: 100%;
+        background: #c7dec1;
+        padding: 20px;
+        border-bottom: 1px solid #a4c28f;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+      .nav-menu.open {
+        display: flex;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .contact-form-card {
+        padding: 24px 18px;
+      }
+      .footer-main-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom-bar {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand-group">
+        <img src="siddhi asset/siddhi-farm-logo.png" alt="Siddhi Organics Logo" />
+        <div class="brand-title-box">
+          <h2>Siddhi Organics</h2>
+          <p>Pure, Natural Soil Solutions.</p>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Contact Header -->
+  <section class="contact-header-section">
+    <div class="container">
+      <h1 class="contact-title">Get In Touch</h1>
+      <p class="contact-subtitle">Connect with our farm directors in Jalgaon for retail, wholesale, or bulk agricultural orders.</p>
+    </div>
+  </section>
+
+  <!-- Main Grid -->
+  <div class="container">
+    <div class="contact-main-grid">
+      
+      <!-- Info Column -->
+      <div class="contact-info-col">
+        <div class="info-card">
+          <h3><i class="fas fa-location-dot"></i> Farm Facility Address</h3>
+          <p><strong>Siddhi Organics</strong><br>Wavadade, Tal. & Dist. Jalgaon,<br>Maharashtra, India</p>
+        </div>
+
+        <div class="info-card">
+          <h3><i class="fas fa-phone-volume"></i> Direct Line & WhatsApp</h3>
+          <ul>
+            <li><i class="fab fa-whatsapp"></i> <strong>Mayur Phuse (Bari):</strong> <a href="https://wa.me/918055227005" target="_blank">+91 80552 27005</a></li>
+            <li><i class="fas fa-phone"></i> <strong>Sahebrao Phuse (Bari):</strong> <a href="tel:8975753851">+91 89757 53851</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Form Column -->
+      <div class="contact-form-card">
+        <h3>Send Us a Message</h3>
+        <p>Fill out the form below to reach the Siddhi Organics team.</p>
+
+        <div class="success-alert" id="successAlert">
+          <i class="fas fa-circle-check"></i> Thank you! Your inquiry has been sent directly to our records.
+        </div>
+
+        <form id="contactForm" onsubmit="submitToGoogleSheet(event)">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="clientName" class="form-control" placeholder="Enter your name" required />
+          </div>
+
+          <div class="form-group">
+            <label>Phone Number / WhatsApp *</label>
+            <input type="tel" id="clientPhone" class="form-control" placeholder="Enter mobile number" required />
+          </div>
+
+          <div class="form-group">
+            <label>Product Requirement</label>
+            <select id="clientProduct" class="form-control">
+              <option value="Vermicompost">Vermicompost (Bags / Bulk)</option>
+              <option value="Vermiwash">Vermiwash (Liquid Tonic)</option>
+              <option value="Vermi Culture">Vermi Culture (Live Worms)</option>
+              <option value="Potting Soil Mix">Potting Soil Mix</option>
+              <option value="Nimboli Powder">Nimboli Powder</option>
+              <option value="General Inquiry">General Partnership / Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Message / Quantity *</label>
+            <textarea id="clientMessage" class="form-control" placeholder="Mention required quantity..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit-excel" id="submitBtn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-main-grid">
+        <div class="footer-col footer-brand-wrap">
+          <img src="siddhi asset/siddhi-farm-logo.png" alt="Siddhi Organics" />
+          <p>Restoring soil biodiversity and crop vitality across Maharashtra.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fas fa-phone"></i> +91 80552 27005</li>
+            <li><i class="fas fa-location-dot"></i> Wavadade, Jalgaon</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 Siddhi Organics. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    mobileBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    // Send form data directly to Google Sheet Web App
+    function submitToGoogleSheet(event) {
+      event.preventDefault();
+
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+
+      const formData = {
+        timestamp: new Date().toLocaleString(),
+        name: document.getElementById('clientName').value.trim(),
+        phone: document.getElementById('clientPhone').value.trim(),
+        product: document.getElementById('clientProduct').value,
+        message: document.getElementById('clientMessage').value.trim()
+      };
+
+      // REPLACE THE URL BELOW WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzrADe8HG_SEs31PhFUDWSt7vtnLJoDn5IZCOLiZLPb8WaTJ4DuNOpMugUQkxig3xbIkg/exec';
+
+      fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+      .then(() => {
+        const alertBox = document.getElementById('successAlert');
+        alertBox.style.display = 'block';
+        document.getElementById('contactForm').reset();
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        setTimeout(() => alertBox.style.display = 'none', 5000);
+      })
+      .catch(error => {
+        console.error('Error!', error);
+        alert('Submission failed. Please try again later.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+      });
+    }
+  </script>
+</body>
+</html>
