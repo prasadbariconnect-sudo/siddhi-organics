@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Products | Siddhi Organics</title>
   
+  <!-- SEO & Social Meta Description -->
+  <meta name="description" content="Explore Siddhi Organics' complete product range including vermicompost, vermiwash, vermi culture, and potting soil mix in various pack sizes." />
+  
+  <!-- Browser Tab Logo / Favicon -->
+  <link rel="icon" type="image/png" href="siddhi asset/siddhi-farm-logo.png" />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -392,7 +398,7 @@
       padding: 20px 0 60px;
     }
 
-    /* ---------------- Edge-to-Edge Detail View ---------------- */
+    /* ---------------- Detail View Styles ---------------- */
     .detail-nav-bar {
       margin-bottom: 18px;
     }
@@ -905,7 +911,6 @@
       font-size: 1rem;
     }
 
-    /* Footer Language Selector */
     .footer-lang-box {
       margin-top: 18px;
     }
@@ -1043,6 +1048,7 @@
         background: #c7dec1;
         padding: 20px;
         border-bottom: 1px solid #a4c28f;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
       }
       .nav-menu.open {
         display: flex;
@@ -1112,11 +1118,10 @@
       </a>
 
       <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html#home" data-i18n="nav_home">Home</a></li>
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
         <li><a href="products.html" class="active" data-i18n="nav_products">Products</a></li>
-        <li><a href="index.html#benefits" data-i18n="nav_benefits">Benefits</a></li>
-        <li><a href="index.html#transformation" data-i18n="nav_transformation">Transformation</a></li>
-        <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
 
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
@@ -1346,10 +1351,10 @@
         <div class="footer-col">
           <h4 data-i18n="footer_heading_benefits">Benefits</h4>
           <ul class="footer-nav-list">
-            <li><a href="index.html#products" data-i18n="footer_link_farmers">For Crop Farmers</a></li>
-            <li><a href="index.html#products" data-i18n="footer_link_gardeners">For Home Gardeners</a></li>
-            <li><a href="index.html#products" data-i18n="footer_link_nurseries">For Plant Nurseries</a></li>
-            <li><a href="index.html#products" data-i18n="footer_link_bulk">Bulk Commercial Supply</a></li>
+            <li><a href="products.html" data-i18n="footer_link_farmers">For Crop Farmers</a></li>
+            <li><a href="products.html" data-i18n="footer_link_gardeners">For Home Gardeners</a></li>
+            <li><a href="products.html" data-i18n="footer_link_nurseries">For Plant Nurseries</a></li>
+            <li><a href="products.html" data-i18n="footer_link_bulk">Bulk Commercial Supply</a></li>
           </ul>
         </div>
 
@@ -1404,7 +1409,6 @@
   <!-- Catalog Database & Interactive Script -->
   <script>
     const productsDatabase = [
-      // 1. Vermicompost - 1 kg
       {
         id: "vermicompost-1kg",
         baseKey: "vermicompost",
@@ -1414,7 +1418,6 @@
         packSize: "1 kg",
         benefit: "Home garden & indoor plant nutrition"
       },
-      // 2. Vermicompost - 5 kg
       {
         id: "vermicompost-5kg",
         baseKey: "vermicompost",
@@ -1424,7 +1427,6 @@
         packSize: "5 kg",
         benefit: "Ideal for terrace & kitchen gardens"
       },
-      // 3. Vermicompost - 10 kg
       {
         id: "vermicompost-10kg",
         baseKey: "vermicompost",
@@ -1434,7 +1436,6 @@
         packSize: "10 kg",
         benefit: "For nurseries, lawn care & garden beds"
       },
-      // 4. Vermicompost - 40 kg
       {
         id: "vermicompost-40kg",
         baseKey: "vermicompost",
@@ -1444,7 +1445,6 @@
         packSize: "40 kg",
         benefit: "Farm-grade bulk supply for agriculture"
       },
-      // 5. Vermiwash - 1 L
       {
         id: "vermiwash-1l",
         baseKey: "vermiwash",
@@ -1454,7 +1454,6 @@
         packSize: "1 Liter",
         benefit: "Foliar plant tonic & growth booster"
       },
-      // 6. Vermiwash - 5 L
       {
         id: "vermiwash-5l",
         baseKey: "vermiwash",
@@ -1464,7 +1463,6 @@
         packSize: "5 Liters",
         benefit: "Commercial farm spray & drip irrigation"
       },
-      // 7. Vermi Culture - 1 kg
       {
         id: "vermiculture-1kg",
         baseKey: "vermiculture",
@@ -1474,7 +1472,6 @@
         packSize: "1 kg",
         benefit: "Eisenia Fetida live composting worms"
       },
-      // 8. Nimboli Powder - 250 g
       {
         id: "nimboli-250g",
         baseKey: "nimboli-powder",
@@ -1484,7 +1481,6 @@
         packSize: "250 g",
         benefit: "Natural pest shield for potted plants"
       },
-      // 9. Nimboli Powder - 500 g
       {
         id: "nimboli-500g",
         baseKey: "nimboli-powder",
@@ -1494,7 +1490,6 @@
         packSize: "500 g",
         benefit: "Terrace garden fungicide & soil shield"
       },
-      // 10. Nimboli Powder - 1 kg
       {
         id: "nimboli-1kg",
         baseKey: "nimboli-powder",
@@ -1504,7 +1499,6 @@
         packSize: "1 kg",
         benefit: "Broad-spectrum organic root defense"
       },
-      // 11. Potting Soil Mix - 5 kg
       {
         id: "potting-soil-5kg",
         baseKey: "potting-soil",
@@ -1514,7 +1508,6 @@
         packSize: "5 kg",
         benefit: "Ready-to-use enriched blend for pots"
       },
-      // 12. Potting Soil Mix - 10 kg
       {
         id: "potting-soil-10kg",
         baseKey: "potting-soil",
@@ -1524,7 +1517,6 @@
         packSize: "10 kg",
         benefit: "Medium garden & terrace planter pack"
       },
-      // 13. Potting Soil Mix - 25 kg
       {
         id: "potting-soil-25kg",
         baseKey: "potting-soil",
@@ -1645,12 +1637,6 @@
       document.getElementById('catalogView').style.display = 'block';
     }
 
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    const navMenu = document.getElementById('navMenu');
-    mobileBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-    });
-
     document.addEventListener('DOMContentLoaded', () => {
       const urlParams = new URLSearchParams(window.location.search);
       const prodParam = urlParams.get('prod');
@@ -1662,6 +1648,43 @@
         filterCategory(catParam);
       } else {
         renderCatalog(productsDatabase);
+      }
+    });
+  </script>
+
+  <!-- Enhanced Mobile Menu Toggle Script -->
+  <script>
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    mobileBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navMenu.classList.toggle('open');
+      const icon = mobileBtn.querySelector('i');
+      if (navMenu.classList.contains('open')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        const icon = mobileBtn.querySelector('i');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (navMenu.classList.contains('open') && !navMenu.contains(event.target) && !mobileBtn.contains(event.target)) {
+        navMenu.classList.remove('open');
+        const icon = mobileBtn.querySelector('i');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
       }
     });
   </script>

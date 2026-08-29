@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Siddhi Organics | Leading Vermicompost Manufacturer in Jalgaon</title>
   
+  <!-- SEO & Social Meta Description -->
+  <meta name="description" content="Siddhi Organics provides 100% pure, lab-tested vermicompost, vermiwash, and natural agricultural inputs directly from our farm in Wavadade, Jalgaon." />
+  
+  <!-- Browser Tab Logo / Favicon -->
+  <link rel="icon" type="image/png" href="siddhi asset/siddhi-farm-logo.png" />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -405,7 +411,7 @@
       background: var(--cta-lime);
     }
 
-    /* ---------------- Background Image Card Design (Exact Match) ---------------- */
+    /* Products Grid */
     .products-container {
       padding: 30px 0 50px;
     }
@@ -513,7 +519,7 @@
       transform: scale(1.02);
     }
 
-    /* ---------------- Product Detail View ("Know More") ---------------- */
+    /* Product Detail View */
     .detail-nav-bar {
       margin-bottom: 20px;
     }
@@ -748,7 +754,7 @@
       color: #455e49;
     }
 
-    /* ---------------- Why Choose Us ---------------- */
+    /* Why Choose Us */
     .why-choose-us {
       text-align: center;
       padding: 25px 0 50px;
@@ -793,7 +799,7 @@
       line-height: 1.25;
     }
 
-    /* ---------------- Before and After Slider ---------------- */
+    /* Before and After Slider */
     .comparison-section {
       padding: 40px 0 60px;
       text-align: center;
@@ -921,7 +927,7 @@
       gap: 3px;
     }
 
-    /* ---------------- CTA Banner ---------------- */
+    /* CTA Banner */
     .cta-outer-wrap {
       padding: 0 20px;
       margin-bottom: -110px;
@@ -1099,7 +1105,7 @@
       background: linear-gradient(90deg, #52b788, #2d6a4f);
     }
 
-    /* ---------------- Footer ---------------- */
+    /* Footer */
     footer {
       background-color: var(--footer-bg);
       color: var(--footer-text);
@@ -1200,7 +1206,6 @@
       font-size: 1rem;
     }
 
-    /* Footer Language Selector */
     .footer-lang-box {
       margin-top: 18px;
     }
@@ -1290,7 +1295,7 @@
       color: #ffffff;
     }
 
-    /* ---------------- Language Modal Popup ---------------- */
+    /* Language Modal Popup */
     .lang-modal-overlay {
       position: fixed;
       top: 0;
@@ -1396,7 +1401,7 @@
       to { transform: scale(1); opacity: 1; }
     }
 
-    /* ---------------- Responsive Rules ---------------- */
+    /* Responsive Rules */
     @media (max-width: 1150px) {
       .hero-card-surface {
         grid-template-columns: 1fr;
@@ -1414,7 +1419,6 @@
       .hero-banner-section {
         padding: 20px 0 25px;
       }
-
       .hero-card-surface {
         background: transparent;
         border: none;
@@ -1425,79 +1429,63 @@
         flex-direction: column;
         gap: 0;
       }
-
       .hero-text-content {
         display: contents;
       }
-
       .hero-badge-pill {
         order: 1;
         align-self: flex-start;
         margin-bottom: 14px;
       }
-
       .hero-carousel-container {
         order: 2;
         width: 100%;
         height: 330px;
         margin-bottom: 22px;
       }
-
       .hero-main-title {
         order: 3;
         font-size: 2rem;
         margin-bottom: 14px;
       }
-
       .hero-intro-text {
         order: 4;
         font-size: 0.95rem;
         margin-bottom: 20px;
       }
-
       .hero-features-checklist {
         order: 5;
         margin-bottom: 24px;
       }
-
       .hero-btn-row {
         order: 6;
       }
-
       .detail-top-grid {
         grid-template-columns: 1fr;
       }
-
       .detail-img-box {
         height: 300px;
       }
-
       .specs-strip {
         grid-template-columns: repeat(2, 1fr);
       }
-
       .cta-content-grid {
         flex-direction: column;
         text-align: center;
         padding: 40px 30px;
       }
-
       .cta-text-col {
         max-width: 100%;
       }
-
       .cta-overlay {
         background: rgba(10, 24, 12, 0.88);
       }
-
       .btn-cta-order {
         margin: 0 auto;
       }
-
       .slider-container {
         height: 380px;
       }
-
       .footer-main-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -1514,6 +1502,7 @@
         background: #c7dec1;
         padding: 20px;
         border-bottom: 1px solid #a4c28f;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
       }
       .nav-menu.open {
         display: flex;
@@ -1608,7 +1597,7 @@
     </div>
   </div>
 
-<!-- Header -->
+  <!-- Header -->
   <header>
     <div class="container nav-wrap">
       <div class="brand-group" onclick="showHome()">
@@ -1643,8 +1632,6 @@
         <div class="hero-card-surface">
           
           <div class="hero-text-content">
-
-            
             <h1 class="hero-main-title">
               <span data-i18n="hero_title_1">Leading Organic</span><br>
               Vermicompost Manufacturer<br>
@@ -1743,7 +1730,7 @@
       </div>
     </section>
 
-    <!-- Product 5-Card Grid (Exact Sample Match: Background Image + Bottom Panel + Button) -->
+    <!-- Product 5-Card Grid -->
     <section class="products-container" id="products">
       <div class="container">
         <div class="products-grid">
@@ -1871,7 +1858,7 @@
     </section>
   </main>
 
-  <!-- ==================== VIEW 2: PRODUCT DETAIL VIEW ("KNOW MORE") ==================== -->
+  <!-- ==================== VIEW 2: PRODUCT DETAIL VIEW ==================== -->
   <main id="productDetailView">
     <div class="container">
       
@@ -2258,13 +2245,6 @@
       }, 50);
     }
 
-    // Mobile Hamburger
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    const navMenu = document.getElementById('navMenu');
-    mobileBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-    });
-
     // Before/After Slider Interaction
     const container = document.getElementById('sliderContainer');
     const afterWrap = document.getElementById('afterWrap');
@@ -2317,6 +2297,43 @@
         moveSlider(e.touches[0].clientX);
       });
     }
+  </script>
+  
+  <!-- Enhanced Mobile Menu Toggle Script (Closes on link click, X button, or outside click) -->
+  <script>
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    mobileBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navMenu.classList.toggle('open');
+      const icon = mobileBtn.querySelector('i');
+      if (navMenu.classList.contains('open')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        const icon = mobileBtn.querySelector('i');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (navMenu.classList.contains('open') && !navMenu.contains(event.target) && !mobileBtn.contains(event.target)) {
+        navMenu.classList.remove('open');
+        const icon = mobileBtn.querySelector('i');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    });
   </script>
 </body>
 </html>

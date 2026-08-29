@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | Siddhi Organics</title>
   
+  <!-- SEO Meta Description -->
+  <meta name="description" content="Get in touch with Siddhi Organics in Wavadade, Jalgaon for direct farm orders, wholesale vermicompost, and agricultural support." />
+  
+  <!-- Browser Tab Logo / Favicon -->
+  <link rel="icon" type="image/png" href="siddhi asset/siddhi-farm-logo.png" />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -207,6 +213,68 @@
     .info-card li i {
       color: var(--cta-lime);
       margin-top: 4px;
+    }
+
+    /* Map Box Styling */
+    .map-card {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      border: 1.5px solid var(--card-border);
+      box-shadow: var(--shadow-card);
+    }
+
+    .map-card h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--brand-green-dark);
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .map-card h3 i {
+      color: var(--btn-green);
+    }
+
+    .map-card p {
+      font-size: 0.88rem;
+      color: #314834;
+      margin-bottom: 12px;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 220px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #cce0c2;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .btn-map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1b4332;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 12px;
+      transition: var(--transition);
+    }
+
+    .btn-map-link:hover {
+      background: var(--btn-green-hover);
     }
 
     .contact-form-card {
@@ -457,7 +525,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="products.html">Products</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
       </ul>
 
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
@@ -492,6 +560,18 @@
             <li><i class="fas fa-phone"></i> <strong>Sahebrao Phuse (Bari):</strong> <a href="tel:8975753851">+91 89757 53851</a></li>
           </ul>
         </div>
+
+        <!-- Google Map Embed Card -->
+        <div class="map-card">
+          <h3><i class="fas fa-map-location-dot"></i> Find Us on Map</h3>
+          <p>Visit our exact farm facility location via Google Maps.</p>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d798861.9172496046!2d73.96885701646883!3d20.43135040156963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd913c3c4735c5d%3A0x56e72b8966fb07bb!2sSiddhi%20Organics!5e1!3m2!1sen!2sin!4v1788041009894!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+          <a href="https://share.google/Yqt1ieoSCb9WSSwn6" target="_blank" class="btn-map-link">
+            <i class="fas fa-external-link-alt"></i> Open in Google Maps
+          </a>
+        </div>
       </div>
 
       <!-- Form Column -->
@@ -500,7 +580,7 @@
         <p>Fill out the form below to reach the Siddhi Organics team.</p>
 
         <div class="success-alert" id="successAlert">
-          <i class="fas fa-circle-check"></i> Thank you! Your inquiry has been sent directly to our records.
+          <i class="fas fa-circle-check"></i> Thank you! Your message has been sent successfully to Siddhi Organics team.
         </div>
 
         <form id="contactForm" onsubmit="submitToGoogleSheet(event)">
@@ -562,14 +642,42 @@
     </div>
   </footer>
 
+  <!-- Mobile Menu & Google Sheet Script -->
   <script>
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const navMenu = document.getElementById('navMenu');
-    mobileBtn.addEventListener('click', () => {
+
+    mobileBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       navMenu.classList.toggle('open');
+      const icon = mobileBtn.querySelector('i');
+      if (navMenu.classList.contains('open')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
     });
 
-    // Send form data directly to Google Sheet Web App
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        const icon = mobileBtn.querySelector('i');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (navMenu.classList.contains('open') && !navMenu.contains(event.target) && !mobileBtn.contains(event.target)) {
+        navMenu.classList.remove('open');
+        const icon = mobileBtn.querySelector('i');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    });
+
     function submitToGoogleSheet(event) {
       event.preventDefault();
 
@@ -585,8 +693,7 @@
         message: document.getElementById('clientMessage').value.trim()
       };
 
-      // REPLACE THE URL BELOW WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbzrADe8HG_SEs31PhFUDWSt7vtnLJoDn5IZCOLiZLPb8WaTJ4DuNOpMugUQkxig3xbIkg/exec';
+      const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
 
       fetch(scriptURL, {
         method: 'POST',
