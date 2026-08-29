@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Siddhi Organics</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --brand-green-dark: #142917;
+      --brand-forest: #1b4332;
+      --card-border: #bcd3aa;
+      --btn-green: #234d28;
+      --btn-green-hover: #16361a;
+      --cta-lime: #8ac926;
+      --cta-lime-hover: #76b01e;
+      --text-dark: #132415;
+      --text-muted: #2f4531;
+      --footer-bg: #0d1e10;
+      --footer-text: #c2d1c4;
+      --footer-heading: #ffffff;
+      --white: #ffffff;
+      --shadow-card: 0 10px 24px rgba(27, 56, 30, 0.12);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #d3e5cd 0%, #b8d0ac 35%, #9cb88c 70%, #85a374 100%);
+      color: var(--text-dark);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ---------------- Header ---------------- */
+    header {
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(211, 229, 205, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .brand-group img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-title-box h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--brand-green-dark);
+      line-height: 1.1;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .brand-title-box p {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 0.8px;
+      color: var(--brand-green-dark);
+      text-transform: uppercase;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: #000;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      color: var(--brand-green-dark);
+      cursor: pointer;
+    }
+
+    /* ---------------- Water Wave Filters ---------------- */
+    .catalog-header {
+      text-align: center;
+      padding: 40px 0 20px;
+    }
+
+    .catalog-title {
+      font-size: clamp(2rem, 3.8vw, 2.8rem);
+      font-weight: 800;
+      color: #122915;
+      text-transform: uppercase;
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 8px;
+    }
+
+    .catalog-subtext {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #213d24;
+      margin-bottom: 24px;
+    }
+
+    .filter-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .filter-btn {
+      position: relative;
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+      border: 1.5px solid #81c784;
+      color: #1b4332;
+      padding: 10px 22px 10px 18px;
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      overflow: visible;
+      z-index: 1;
+      animation: waterMorph 4s ease-in-out infinite alternate;
+      box-shadow: 0 4px 12px rgba(46, 125, 50, 0.12);
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn::before,
+    .filter-btn::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border-radius: inherit;
+      border: 1.5px solid rgba(138, 201, 38, 0.65);
+      z-index: -1;
+      pointer-events: none;
+      animation: waveRipple 3s cubic-bezier(0.1, 0.4, 0.8, 0.9) infinite;
+    }
+
+    .filter-btn::after {
+      animation-delay: 1.5s;
+    }
+
+    .filter-btn i {
+      font-size: 0.75rem;
+      color: #388e3c;
+      animation: gentleFloat 2.5s ease-in-out infinite alternate;
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, #2d6a4f 0%, #1b4332 100%);
+      color: #ffffff;
+      border-color: #1b4332;
+      box-shadow: 0 6px 18px rgba(27, 67, 50, 0.35);
+    }
+
+    .filter-btn.active::before,
+    .filter-btn.active::after {
+      border-color: rgba(45, 106, 79, 0.8);
+    }
+
+    .filter-btn.active i {
+      color: #8ac926;
+    }
+
+    @keyframes waterMorph {
+      0% {
+        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        transform: translateY(0);
+      }
+      50% {
+        border-radius: 30px 180px 30px 180px/180px 30px 180px 30px;
+        transform: translateY(-2px);
+      }
+      100% {
+        border-radius: 200px 25px 200px 25px/25px 200px 25px 200px;
+        transform: translateY(1px);
+      }
+    }
+
+    @keyframes waveRipple {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1.18, 1.4);
+        opacity: 0;
+      }
+    }
+
+    @keyframes gentleFloat {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-2px) rotate(8deg);
+      }
+    }
+
+    /* ---------------- Product Cards ---------------- */
+    .products-container {
+      padding: 10px 0 60px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      border: 1.5px solid var(--card-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(27, 56, 30, 0.2);
+    }
+
+    .card-img-wrap {
+      width: 100%;
+      height: 260px;
+      padding: 0;
+      margin: 0;
+      background: #f1f8ee;
+      overflow: hidden;
+      display: block;
+      border-bottom: 1.5px solid var(--card-border);
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .product-card:hover .card-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .card-content-wrap {
+      padding: 16px 16px 18px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--brand-green-dark);
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 6px;
+    }
+
+    .card-benefit-text {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #37493a;
+      line-height: 1.4;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .card-actions-row {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .btn-card-inquire {
+      background-color: var(--btn-green);
+      color: var(--white);
+      border: none;
+      flex: 1;
+      padding: 10px 10px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-card-inquire:hover {
+      background-color: var(--btn-green-hover);
+      transform: scale(1.02);
+    }
+
+    .btn-card-wa-direct {
+      background-color: #25d366;
+      color: #ffffff;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-card-wa-direct:hover {
+      background-color: #1da851;
+      transform: scale(1.05);
+    }
+
+    /* ---------------- Views ---------------- */
+    #catalogView {
+      display: block;
+    }
+
+    #productDetailView {
+      display: none;
+      padding: 20px 0 60px;
+    }
+
+    /* ---------------- Edge-to-Edge Detail View ---------------- */
+    .detail-nav-bar {
+      margin-bottom: 18px;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--brand-green-dark);
+      padding: 9px 20px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      border: 1.5px solid var(--card-border);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-back:hover {
+      background: var(--brand-green-dark);
+      color: var(--white);
+    }
+
+    .product-detail-card {
+      background: var(--white);
+      border-radius: 24px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+      padding: 36px;
+      border: 1px solid #dbe6d5;
+      margin-bottom: 40px;
+    }
+
+    .detail-top-grid {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .detail-img-box {
+      background: #f1f8ee;
+      border-radius: 20px;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid #d5e6cf;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .detail-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .detail-summary .tagline {
+      color: #3b7a46;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .detail-summary h1 {
+      font-size: 2.2rem;
+      color: var(--brand-green-dark);
+      margin-bottom: 8px;
+      line-height: 1.15;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .detail-summary .price-tag {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #244e29;
+      margin-bottom: 12px;
+    }
+
+    .detail-summary .desc {
+      font-size: 0.95rem;
+      color: #37493a;
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+
+    .action-cta-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-action-wa {
+      background-color: #25d366;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 12px 24px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-action-wa:hover {
+      background-color: #1da851;
+    }
+
+    .btn-action-call {
+      background-color: var(--brand-green-dark);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 12px 24px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .specs-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      background: #f4f9f0;
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid #e1ebd9;
+      margin-bottom: 28px;
+    }
+
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .spec-item .label {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #55755b;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .spec-item .value {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--brand-green-dark);
+    }
+
+    .tab-nav {
+      display: flex;
+      gap: 10px;
+      border-bottom: 2px solid #e5ede0;
+      margin-bottom: 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 6px;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 10px 18px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #5f7a63;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .tab-btn.active {
+      background: #e8f4e2;
+      color: var(--brand-green-dark);
+    }
+
+    .tab-content {
+      display: none;
+      font-size: 0.94rem;
+      line-height: 1.6;
+      color: #2e4432;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .tab-content ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    .tab-content li {
+      margin-bottom: 8px;
+    }
+
+    .tab-content h4 {
+      font-size: 1rem;
+      color: var(--brand-green-dark);
+      margin-top: 16px;
+      margin-bottom: 6px;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .faq-accordion details {
+      background: #fbfdf9;
+      border: 1px solid #e3ede0;
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+    }
+
+    .faq-accordion summary {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--brand-green-dark);
+      cursor: pointer;
+    }
+
+    .faq-accordion p {
+      margin-top: 8px;
+      font-size: 0.88rem;
+      color: #455e49;
+    }
+
+    /* ---------------- CTA Banner ---------------- */
+    .cta-outer-wrap {
+      padding: 0 20px;
+      margin-bottom: -110px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .cta-banner-card {
+      max-width: 1280px;
+      margin: 0 auto;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+      background-color: #0b1a0e;
+      position: relative;
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+    }
+
+    .cta-bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 1;
+    }
+
+    .cta-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(10, 24, 12, 0.94) 0%, rgba(10, 24, 12, 0.78) 55%, rgba(10, 24, 12, 0.3) 100%);
+      z-index: 2;
+    }
+
+    .cta-content-grid {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      padding: 50px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .cta-text-col {
+      max-width: 620px;
+    }
+
+    .cta-text-col h2 {
+      font-size: clamp(2rem, 3.4vw, 2.8rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .cta-text-col p {
+      font-size: 1.02rem;
+      color: #d1e3d4;
+      line-height: 1.6;
+      margin-bottom: 26px;
+    }
+
+    .btn-cta-order {
+      background-color: var(--cta-lime);
+      color: #0d1e10;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+      box-shadow: 0 8px 20px rgba(138, 201, 38, 0.3);
+    }
+
+    .btn-cta-order:hover {
+      background-color: var(--cta-lime-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(138, 201, 38, 0.4);
+    }
+
+    /* Metric Widget */
+    .cta-metric-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 24px 28px;
+      width: 320px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      flex-shrink: 0;
+    }
+
+    .metric-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #2d4a32;
+      margin-bottom: 14px;
+    }
+
+    .metric-gauge-wrap {
+      text-align: center;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .metric-gauge-wrap svg {
+      width: 170px;
+      height: 95px;
+    }
+
+    .metric-score-label {
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .metric-score-label .score-val {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--brand-green-dark);
+      line-height: 1;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .metric-score-label .score-tag {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #557a5b;
+    }
+
+    .metric-bar-group {
+      margin-top: 10px;
+    }
+
+    .metric-bar-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #4a634e;
+      margin-bottom: 4px;
+    }
+
+    .metric-progress {
+      height: 6px;
+      width: 100%;
+      background: #e1ebd9;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .metric-progress-fill {
+      height: 100%;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #52b788, #2d6a4f);
+    }
+
+    /* ---------------- Footer ---------------- */
+    footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 160px 0 30px;
+    }
+
+    .footer-main-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr 0.9fr 1.1fr 1.3fr;
+      gap: 36px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h4 {
+      color: var(--footer-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .footer-brand-wrap img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 16px;
+      background: #ffffff;
+      padding: 4px 8px;
+      border-radius: 8px;
+    }
+
+    .footer-brand-wrap p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .footer-social-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social-icons a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #1a3820;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-social-icons a:hover {
+      background-color: var(--cta-lime);
+      color: #0d1e10;
+      transform: translateY(-2px);
+    }
+
+    .footer-nav-list {
+      list-style: none;
+    }
+
+    .footer-nav-list li {
+      margin-bottom: 10px;
+    }
+
+    .footer-nav-list a {
+      font-size: 0.88rem;
+      color: var(--footer-text);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .footer-nav-list a:hover {
+      color: #ffffff;
+      padding-left: 4px;
+    }
+
+    .footer-contact-list {
+      list-style: none;
+    }
+
+    .footer-contact-list li {
+      margin-bottom: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .footer-contact-list i {
+      color: var(--cta-lime);
+      margin-top: 3px;
+      font-size: 1rem;
+    }
+
+    /* Footer Language Selector */
+    .footer-lang-box {
+      margin-top: 18px;
+    }
+
+    .footer-lang-select {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      outline: none;
+      cursor: pointer;
+      width: 100%;
+      max-width: 220px;
+    }
+
+    .footer-lang-select option {
+      background: #0d1e10;
+      color: #ffffff;
+    }
+
+    .newsletter-box p {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .newsletter-input {
+      width: 100%;
+      padding: 13px 18px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #fff;
+      font-size: 0.88rem;
+      outline: none;
+    }
+
+    .btn-subscribe {
+      background-color: var(--cta-lime);
+      color: #0d1e10;
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 12px 24px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .btn-subscribe:hover {
+      background-color: var(--cta-lime-hover);
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: #7b947f;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom-links a {
+      color: #7b947f;
+      margin-left: 16px;
+      transition: var(--transition);
+    }
+
+    .footer-bottom-links a:hover {
+      color: #ffffff;
+    }
+
+    /* ---------------- Responsive ---------------- */
+    @media (max-width: 1150px) {
+      .footer-main-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .detail-top-grid {
+        grid-template-columns: 1fr;
+      }
+      .detail-img-box {
+        height: 320px;
+      }
+      .specs-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .cta-content-grid {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 30px;
+      }
+      .cta-text-col {
+        max-width: 100%;
+      }
+      .cta-overlay {
+        background: rgba(10, 24, 12, 0.88);
+      }
+      .btn-cta-order {
+        margin: 0 auto;
+      }
+      .footer-main-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        width: 100%;
+        background: #c7dec1;
+        padding: 20px;
+        border-bottom: 1px solid #a4c28f;
+      }
+      .nav-menu.open {
+        display: flex;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .card-img-wrap {
+        height: 180px;
+      }
+      .product-detail-card {
+        padding: 20px 16px;
+      }
+      .detail-img-box {
+        height: 260px;
+      }
+      .cta-metric-card {
+        width: 100%;
+      }
+      .footer-main-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom-bar {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-bottom-links a {
+        margin: 0 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      .card-img-wrap {
+        height: 220px;
+      }
+      .specs-strip {
+        grid-template-columns: 1fr;
+      }
+      .action-cta-group {
+        flex-direction: column;
+      }
+      .action-cta-group a {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand-group">
+        <img src="siddhi asset/siddhi-farm-logo.png" alt="Siddhi Organics Logo" />
+        <div class="brand-title-box">
+          <h2>Siddhi Organics</h2>
+          <p data-i18n="brand_tagline">Pure, Natural Soil Solutions.</p>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html#home" data-i18n="nav_home">Home</a></li>
+        <li><a href="products.html" class="active" data-i18n="nav_products">Products</a></li>
+        <li><a href="index.html#benefits" data-i18n="nav_benefits">Benefits</a></li>
+        <li><a href="index.html#transformation" data-i18n="nav_transformation">Transformation</a></li>
+        <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== VIEW 1: PRODUCTS CATALOG ==================== -->
+  <main id="catalogView">
+    <div class="container">
+      
+      <div class="catalog-header">
+        <h1 class="catalog-title" data-i18n="nav_products">Our Organic Range</h1>
+        <p class="catalog-subtext">Direct Farm Formulations • Tested & Weed-Free • Select Any Size</p>
+
+        <!-- Category Organic Water Wave Filter Pills -->
+        <div class="filter-wrapper">
+          <button class="filter-btn active" onclick="filterCategory('all', event)"><i class="fas fa-seedling"></i> All Products</button>
+          <button class="filter-btn" onclick="filterCategory('vermicompost', event)"><i class="fas fa-leaf"></i> Vermicompost (Kg)</button>
+          <button class="filter-btn" onclick="filterCategory('vermiwash', event)"><i class="fas fa-tint"></i> Vermiwash (L)</button>
+          <button class="filter-btn" onclick="filterCategory('vermiculture', event)"><i class="fas fa-bug"></i> Vermi Culture (Kg)</button>
+          <button class="filter-btn" onclick="filterCategory('potting-soil', event)"><i class="fas fa-mountain"></i> Potting Soil (Kg)</button>
+          <button class="filter-btn" onclick="filterCategory('nimboli-powder', event)"><i class="fas fa-spa"></i> Nimboli Powder (g / Kg)</button>
+        </div>
+      </div>
+
+      <!-- Filtered Dynamic Products Grid -->
+      <div class="products-container">
+        <div class="products-grid" id="catalogGrid"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== VIEW 2: PRODUCT DETAIL VIEW ("KNOW MORE") ==================== -->
+  <main id="productDetailView">
+    <div class="container">
+      
+      <div class="detail-nav-bar">
+        <button class="btn-back" onclick="showCatalog()" data-i18n="detail_back_btn">
+          <i class="fas fa-arrow-left"></i> Back to Products
+        </button>
+      </div>
+
+      <div class="product-detail-card">
+        
+        <div class="detail-top-grid">
+          <div class="detail-img-box">
+            <img id="detailImg" src="" alt="Product Detail" />
+          </div>
+          <div class="detail-summary">
+            <span class="tagline" id="detailTagline"></span>
+            <h1 id="detailTitle"></h1>
+            <div class="price-tag" id="detailPrice"></div>
+            <p class="desc" id="detailDesc"></p>
+
+            <div class="action-cta-group">
+              <a href="#" id="detailWaBtn" target="_blank" class="btn-action-wa" data-i18n="detail_order_wa">
+                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+              </a>
+              <a href="tel:8055227005" class="btn-action-call" data-i18n="detail_call_now">
+                <i class="fas fa-phone"></i> Call Now (+91 80552 27005)
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="specs-strip">
+          <div class="spec-item">
+            <span class="label" data-i18n="spec_label_packaging">Pack Size</span>
+            <span class="value" id="detailPackaging"></span>
+          </div>
+          <div class="spec-item">
+            <span class="label" data-i18n="spec_label_dosage">Recommended Dosage</span>
+            <span class="value" id="detailDosage"></span>
+          </div>
+          <div class="spec-item">
+            <span class="label" data-i18n="spec_label_freq">Frequency</span>
+            <span class="value" id="detailFrequency"></span>
+          </div>
+          <div class="spec-item">
+            <span class="label" data-i18n="spec_label_best_time">Best Time to Apply</span>
+            <span class="value" id="detailBestTime"></span>
+          </div>
+        </div>
+
+        <div class="tab-nav">
+          <button class="tab-btn active" onclick="switchTab(event, 'tabBenefits')" data-i18n="tab_benefits_title">Benefits & Uses</button>
+          <button class="tab-btn" onclick="switchTab(event, 'tabUsage')" data-i18n="tab_usage_title">How To Use</button>
+          <button class="tab-btn" onclick="switchTab(event, 'tabSpecs')" data-i18n="tab_specs_title">Storage & Safety</button>
+          <button class="tab-btn" onclick="switchTab(event, 'tabFaqs')" data-i18n="tab_faqs_title">FAQs</button>
+        </div>
+
+        <!-- Tab 1 -->
+        <div id="tabBenefits" class="tab-content active">
+          <h4 data-i18n="detail_head_advantages">Key Advantages</h4>
+          <ul id="detailBenefits"></ul>
+          <h4 data-i18n="detail_head_suitable">Suitable Plants & Crops</h4>
+          <p id="detailSuitable"></p>
+          <h4 data-i18n="detail_head_where">Where to Apply</h4>
+          <p id="detailWhereToUse"></p>
+        </div>
+
+        <!-- Tab 2 -->
+        <div id="tabUsage" class="tab-content">
+          <h4 data-i18n="detail_head_directions">Application Directions</h4>
+          <p id="detailHowToUse"></p>
+          <h4 data-i18n="detail_head_results">Expected Crop Results</h4>
+          <p id="detailResults"></p>
+        </div>
+
+        <!-- Tab 3 -->
+        <div id="tabSpecs" class="tab-content">
+          <h4 data-i18n="detail_head_ingredients">Ingredients & Base Material</h4>
+          <p id="detailMadeFrom"></p>
+          <h4 data-i18n="detail_head_storage">Storage Guidelines</h4>
+          <p id="detailStorage"></p>
+          <h4 data-i18n="detail_head_precautions">Important Precautions</h4>
+          <p id="detailPrecautions"></p>
+        </div>
+
+        <!-- Tab 4 -->
+        <div id="tabFaqs" class="tab-content">
+          <div class="faq-accordion" id="detailFaqs"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- CTA Banner -->
+  <div class="cta-outer-wrap">
+    <div class="cta-banner-card">
+      <img src="siddhi asset/footer-image.png" alt="Siddhi Organics Soil Solutions" class="cta-bg-image" onerror="this.src='https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1400&q=80'" />
+      <div class="cta-overlay"></div>
+      
+      <div class="cta-content-grid">
+        <div class="cta-text-col">
+          <h2 data-i18n="cta_heading">What Are You Waiting For?</h2>
+          <p data-i18n="cta_desc">Whether you're a farmer, home gardener, landscaper, or nursery owner, Siddhi Organics provides 100% certified pure soil solutions that deliver lasting ecological results.</p>
+          <a href="https://wa.me/918055227005?text=Hello%20Siddhi%20Organics,%20I%20want%20to%20order%20organic%20farm%20products." target="_blank" class="btn-cta-order">
+            <span data-i18n="cta_btn">Order Siddhi Organics Now</span> <i class="fas fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <!-- Metric Widget -->
+        <div class="cta-metric-card">
+          <div class="metric-header">
+            <span><i class="fas fa-shield-halved" style="color: #2d6a4f;"></i> <span data-i18n="metric_purity">Purity Index</span></span>
+            <span style="color: #6b8f71;" data-i18n="metric_tested">Lab Tested</span>
+          </div>
+          
+          <div class="metric-gauge-wrap">
+            <svg viewBox="0 0 100 55">
+              <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="#e1ebd9" stroke-width="9" stroke-linecap="round" />
+              <path d="M 10 50 A 40 40 0 0 1 82 25" fill="none" stroke="#1b4332" stroke-width="9" stroke-linecap="round" />
+            </svg>
+            <div class="metric-score-label">
+              <div class="score-val" data-i18n="metric_score_val">100%</div>
+              <div class="score-tag" data-i18n="metric_score_tag">Pure Organic</div>
+            </div>
+          </div>
+
+          <div class="metric-bar-group">
+            <div class="metric-bar-row">
+              <span data-i18n="metric_vitality">Soil Vitality</span>
+              <span>95%</span>
+            </div>
+            <div class="metric-progress">
+              <div class="metric-progress-fill" style="width: 95%;"></div>
+            </div>
+
+            <div class="metric-bar-row">
+              <span data-i18n="metric_chem_free">Weed & Chemical Free</span>
+              <span>100%</span>
+            </div>
+            <div class="metric-progress">
+              <div class="metric-progress-fill" style="width: 100%;"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-main-grid">
+        
+        <!-- Col 1: Brand -->
+        <div class="footer-col footer-brand-wrap">
+          <img src="siddhi asset/siddhi-farm-logo.png" alt="Siddhi Organics" />
+          <p data-i18n="footer_about_text">At Siddhi Organics, we're committed to restoring soil biodiversity, enhancing crop vitality, and helping sustainable agriculture thrive across Maharashtra.</p>
+          <div class="footer-social-icons">
+            <a href="https://facebook.com/siddhi_organics_21" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/siddhi_organics_21" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/918055227005" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+
+          <!-- Quick Footer Language Selector -->
+          <div class="footer-lang-box">
+            <select id="footerLangSelect" class="footer-lang-select" onchange="applyLanguage(this.value)">
+              <option value="en">🌐 English</option>
+              <option value="mr">🌐 मराठी (Marathi)</option>
+              <option value="hi">🌐 हिंदी (Hindi)</option>
+              <option value="gu">🌐 ગુજરાતી (Gujarati)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Col 2: About Links -->
+        <div class="footer-col">
+          <h4 data-i18n="footer_heading_about">About</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html#home" data-i18n="footer_link_story">Our Story</a></li>
+            <li><a href="index.html#benefits" data-i18n="footer_link_facility">Farm Facility</a></li>
+            <li><a href="index.html#benefits" data-i18n="footer_link_quality">Quality Standards</a></li>
+            <li><a href="index.html#transformation" data-i18n="footer_link_trans">Transformation</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Benefits Links -->
+        <div class="footer-col">
+          <h4 data-i18n="footer_heading_benefits">Benefits</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html#products" data-i18n="footer_link_farmers">For Crop Farmers</a></li>
+            <li><a href="index.html#products" data-i18n="footer_link_gardeners">For Home Gardeners</a></li>
+            <li><a href="index.html#products" data-i18n="footer_link_nurseries">For Plant Nurseries</a></li>
+            <li><a href="index.html#products" data-i18n="footer_link_bulk">Bulk Commercial Supply</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Info -->
+        <div class="footer-col">
+          <h4 data-i18n="footer_heading_contact">Contact Info</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fas fa-phone"></i>
+              <span><a href="tel:8055227005">+91 80552 27005</a></span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span><a href="mailto:contact@siddhiorganics.com">contact@siddhiorganics.com</a></span>
+            </li>
+            <li>
+              <i class="fas fa-location-dot"></i>
+              <span data-i18n="footer_address">Wavadade, Tal. & Dist. Jalgaon, Maharashtra</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Newsletter -->
+        <div class="footer-col newsletter-box">
+          <h4 data-i18n="footer_heading_newsletter">Newsletter Subscription</h4>
+          <p data-i18n="footer_newsletter_desc">Join our grower community to receive seasonal crop dosage charts and harvest updates.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to Siddhi Organics updates!');">
+            <input type="email" data-i18n-placeholder="footer_input_placeholder" placeholder="Email Address" class="newsletter-input" required />
+            <button type="submit" class="btn-subscribe">
+              <span data-i18n="footer_btn_subscribe">Subscribe</span> <i class="fas fa-arrow-up-right-from-square"></i>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div data-i18n="footer_copyright">&copy; 2026 Siddhi Organics. All Rights Reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="#" data-i18n="footer_link_privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer_link_terms">Terms of Service</a>
+          <a href="#" data-i18n="footer_link_shipping">Shipping & Returns</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Include Multi-Language Script -->
+  <script src="lang.js"></script>
+
+  <!-- Catalog Database & Interactive Script -->
+  <script>
+    const productsDatabase = [
+      // 1. Vermicompost - 1 kg
+      {
+        id: "vermicompost-1kg",
+        baseKey: "vermicompost",
+        category: "vermicompost",
+        name: "Vermicompost (1 kg)",
+        image: "siddhi asset/1kg-vermicompost.png",
+        packSize: "1 kg",
+        benefit: "Home garden & indoor plant nutrition"
+      },
+      // 2. Vermicompost - 5 kg
+      {
+        id: "vermicompost-5kg",
+        baseKey: "vermicompost",
+        category: "vermicompost",
+        name: "Vermicompost (5 kg)",
+        image: "siddhi asset/5kg-vermicompost.png",
+        packSize: "5 kg",
+        benefit: "Ideal for terrace & kitchen gardens"
+      },
+      // 3. Vermicompost - 10 kg
+      {
+        id: "vermicompost-10kg",
+        baseKey: "vermicompost",
+        category: "vermicompost",
+        name: "Vermicompost (10 kg)",
+        image: "siddhi asset/10kg-vermicompost.png",
+        packSize: "10 kg",
+        benefit: "For nurseries, lawn care & garden beds"
+      },
+      // 4. Vermicompost - 40 kg
+      {
+        id: "vermicompost-40kg",
+        baseKey: "vermicompost",
+        category: "vermicompost",
+        name: "Vermicompost (40 kg)",
+        image: "siddhi asset/40kg-vermicompost.png",
+        packSize: "40 kg",
+        benefit: "Farm-grade bulk supply for agriculture"
+      },
+      // 5. Vermiwash - 1 L
+      {
+        id: "vermiwash-1l",
+        baseKey: "vermiwash",
+        category: "vermiwash",
+        name: "Vermiwash (1 Liter)",
+        image: "siddhi asset/Vermiwash.png",
+        packSize: "1 Liter",
+        benefit: "Foliar plant tonic & growth booster"
+      },
+      // 6. Vermiwash - 5 L
+      {
+        id: "vermiwash-5l",
+        baseKey: "vermiwash",
+        category: "vermiwash",
+        name: "Vermiwash (5 Liters)",
+        image: "siddhi asset/Vermiwash.png",
+        packSize: "5 Liters",
+        benefit: "Commercial farm spray & drip irrigation"
+      },
+      // 7. Vermi Culture - 1 kg
+      {
+        id: "vermiculture-1kg",
+        baseKey: "vermiculture",
+        category: "vermiculture",
+        name: "Vermi Culture (1 kg)",
+        image: "siddhi asset/Vermi Culture.png",
+        packSize: "1 kg",
+        benefit: "Eisenia Fetida live composting worms"
+      },
+      // 8. Nimboli Powder - 250 g
+      {
+        id: "nimboli-250g",
+        baseKey: "nimboli-powder",
+        category: "nimboli-powder",
+        name: "Nimboli Powder (250 g)",
+        image: "siddhi asset/nimboli-powder.png",
+        packSize: "250 g",
+        benefit: "Natural pest shield for potted plants"
+      },
+      // 9. Nimboli Powder - 500 g
+      {
+        id: "nimboli-500g",
+        baseKey: "nimboli-powder",
+        category: "nimboli-powder",
+        name: "Nimboli Powder (500 g)",
+        image: "siddhi asset/nimboli-powder.png",
+        packSize: "500 g",
+        benefit: "Terrace garden fungicide & soil shield"
+      },
+      // 10. Nimboli Powder - 1 kg
+      {
+        id: "nimboli-1kg",
+        baseKey: "nimboli-powder",
+        category: "nimboli-powder",
+        name: "Nimboli Powder (1 kg)",
+        image: "siddhi asset/nimboli-powder.png",
+        packSize: "1 kg",
+        benefit: "Broad-spectrum organic root defense"
+      },
+      // 11. Potting Soil Mix - 5 kg
+      {
+        id: "potting-soil-5kg",
+        baseKey: "potting-soil",
+        category: "potting-soil",
+        name: "Potting Soil Mix (5 kg)",
+        image: "siddhi asset/potting-soil-mix.png",
+        packSize: "5 kg",
+        benefit: "Ready-to-use enriched blend for pots"
+      },
+      // 12. Potting Soil Mix - 10 kg
+      {
+        id: "potting-soil-10kg",
+        baseKey: "potting-soil",
+        category: "potting-soil",
+        name: "Potting Soil Mix (10 kg)",
+        image: "siddhi asset/potting-soil-mix.png",
+        packSize: "10 kg",
+        benefit: "Medium garden & terrace planter pack"
+      },
+      // 13. Potting Soil Mix - 25 kg
+      {
+        id: "potting-soil-25kg",
+        baseKey: "potting-soil",
+        category: "potting-soil",
+        name: "Potting Soil Mix (25 kg)",
+        image: "siddhi asset/potting-soil-mix.png",
+        packSize: "25 kg",
+        benefit: "Bulk landscaping & terrace garden setup"
+      }
+    ];
+
+    window.currentActiveProductId = null;
+
+    function getProductUrl(productId) {
+      return `${window.location.origin}${window.location.pathname}?prod=${productId}`;
+    }
+
+    function openWhatsAppOrder(productId) {
+      const p = productsDatabase.find(item => item.id === productId);
+      if (!p) return;
+      const directUrl = getProductUrl(p.id);
+      const text = `Hello Siddhi Organics, I want to order/inquire about:\n\n*Product:* ${p.name}\n*Pack Size:* ${p.packSize}\n*Link:* ${directUrl}\n\nPlease share current pricing and delivery details.`;
+      window.open(`https://wa.me/918055227005?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    function renderCatalog(items) {
+      const grid = document.getElementById('catalogGrid');
+      grid.innerHTML = items.map(p => `
+        <div class="product-card" data-category="${p.category}">
+          <div class="card-img-wrap">
+            <img src="${p.image}" alt="${p.name}" onerror="this.src='siddhi asset/40kg-vermicompost.png'" />
+          </div>
+          <div class="card-content-wrap">
+            <h3 class="card-title">${p.name}</h3>
+            <p class="card-benefit-text">${p.benefit}</p>
+            <div class="card-actions-row">
+              <button class="btn-card-inquire" onclick="openProductDetail('${p.id}')">Know More</button>
+              <button class="btn-card-wa-direct" onclick="openWhatsAppOrder('${p.id}')" title="Order on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterCategory(cat, evt) {
+      if (evt) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        evt.currentTarget.classList.add('active');
+      }
+
+      showCatalog();
+
+      if (cat === 'all') {
+        renderCatalog(productsDatabase);
+      } else {
+        const filtered = productsDatabase.filter(p => p.category === cat);
+        renderCatalog(filtered);
+      }
+    }
+
+    function openProductDetail(productId) {
+      window.currentActiveProductId = productId;
+      const item = productsDatabase.find(p => p.id === productId) || productsDatabase[0];
+      const currentLang = typeof getCurrentLang === 'function' ? getCurrentLang() : 'en';
+      const prodGroup = detailedProductsI18n[item.baseKey] || detailedProductsI18n["vermicompost"];
+      const p = prodGroup[currentLang] || prodGroup["en"];
+
+      document.getElementById('detailTitle').textContent = `${p.name} (${item.packSize})`;
+      document.getElementById('detailImg').src = item.image;
+      document.getElementById('detailImg').alt = item.name;
+      document.getElementById('detailTagline').textContent = p.tagline;
+      document.getElementById('detailPrice').textContent = p.price;
+      document.getElementById('detailDesc').textContent = p.description;
+      document.getElementById('detailMadeFrom').textContent = p.madeFrom;
+
+      document.getElementById('detailPackaging').textContent = item.packSize;
+      document.getElementById('detailDosage').textContent = p.dosage;
+      document.getElementById('detailFrequency').textContent = p.frequency;
+      document.getElementById('detailBestTime').textContent = p.bestTime;
+
+      document.getElementById('detailBenefits').innerHTML = p.benefits.map(b => `<li>${b}</li>`).join('');
+      document.getElementById('detailSuitable').textContent = p.suitable;
+      document.getElementById('detailWhereToUse').textContent = p.whereToUse;
+      document.getElementById('detailHowToUse').textContent = p.howToUse;
+      document.getElementById('detailStorage').textContent = p.storage;
+      document.getElementById('detailPrecautions').textContent = p.precautions;
+      document.getElementById('detailResults').textContent = p.results;
+
+      const directUrl = getProductUrl(item.id);
+      const waMsg = `Hello Siddhi Organics, I want to order/inquire about:\n\n*Product:* ${item.name} (${item.packSize})\n*Link:* ${directUrl}\n\nPlease share current pricing and delivery details.`;
+      document.getElementById('detailWaBtn').href = `https://wa.me/918055227005?text=${encodeURIComponent(waMsg)}`;
+
+      document.getElementById('detailFaqs').innerHTML = p.faqs.map(f => `
+        <details>
+          <summary>${f.q}</summary>
+          <p>${f.a}</p>
+        </details>
+      `).join('');
+
+      document.getElementById('catalogView').style.display = 'none';
+      document.getElementById('productDetailView').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function switchTab(evt, tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+      evt.currentTarget.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    function showCatalog() {
+      window.currentActiveProductId = null;
+      document.getElementById('productDetailView').style.display = 'none';
+      document.getElementById('catalogView').style.display = 'block';
+    }
+
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    mobileBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const prodParam = urlParams.get('prod');
+      const catParam = urlParams.get('category');
+
+      if (prodParam) {
+        openProductDetail(prodParam);
+      } else if (catParam) {
+        filterCategory(catParam);
+      } else {
+        renderCatalog(productsDatabase);
+      }
+    });
+  </script>
+</body>
+</html>
