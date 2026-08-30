@@ -20,7 +20,7 @@ const translations = {
     hero_title_2: "in <span class='hero-city-tag'>Jalgaon</span>",
     hero_desc: "Pure earthworm bio-conversion crafted directly at our farm in Jalgaon. Restoring soil health, organic carbon, and vigorous crop growth with 100% natural inputs.",
     hero_feat_1: "Premium Pure Vermicompost",
-    hero_feat_2: "Lab-Tested & Weed-Free",
+    hero_feat_2: "Weed-Free",
     hero_feat_3: "Direct From Producer",
     hero_btn_explore: "Explore Products",
     hero_btn_wa: "Order on WhatsApp",
@@ -30,9 +30,9 @@ const translations = {
     prod_1_name: "Vermicompost",
     prod_1_benefit: "Boosts fertility, improves structure",
     prod_2_name: "Vermiwash",
-    prod_2_benefit: "Concentrated plant booster, foliar spray",
+    prod_2_benefit: "Concentrated plant booster",
     prod_3_name: "Vermi Culture",
-    prod_3_benefit: "Start your compost beds, Eisenia Fetida",
+    prod_3_benefit: "Start your compost beds",
     prod_4_name: "Potting Soil Mix",
     prod_4_benefit: "Ready-to-use, ideal for pots",
     prod_5_name: "Nimboli Powder",
@@ -44,7 +44,7 @@ const translations = {
     why_feat_1: "100% Natural & Organic",
     why_feat_2: "Direct from Producer",
     why_feat_3: "Retail & Bulk Packs",
-    why_feat_4: "Tested & Weed-Free",
+    why_feat_4: "Weed-Free",
 
     // Before & After Transformation
     trans_badge: "Before And After",
@@ -99,7 +99,7 @@ const translations = {
     footer_link_nurseries: "For Plant Nurseries",
     footer_link_bulk: "Bulk Commercial Supply",
     footer_heading_contact: "Contact Info",
-    footer_address: "Wavadade, Tal. & Dist. Jalgaon, Maharashtra",
+    footer_address: "Wavadade, Tal. & Dist. Jalgaon, Maharashtra<br><strong>PIN Code: 425001</strong>",
     footer_heading_newsletter: "Newsletter Subscription",
     footer_newsletter_desc: "Join our grower community to receive seasonal crop dosage charts and harvest updates.",
     footer_input_placeholder: "Email Address",
@@ -130,7 +130,7 @@ const translations = {
     hero_title_2: "सिद्धी <span class='hero-city-tag'>ऑरगॅनिक्स</span>",
     hero_desc: "आमच्या जळगाव येथील फार्ममधून थेट शुद्ध गांडूळ खत निर्मिती. १००% नैसर्गिक घटकांसह मातीची सुपीकता, सेंद्रिय कर्ब आणि पिकांची भरघोस वाढ सुनिश्चित करा.",
     hero_feat_1: "उत्कृष्ट दर्जाचे गांडूळ खत",
-    hero_feat_2: "प्रयोगशाळा तपासणी व तणमुक्त",
+    hero_feat_2: "तणमुक्त",
     hero_feat_3: "शेतकऱ्यांकडून थेट पुरवठा",
     hero_btn_explore: "उत्पादने पहा",
     hero_btn_wa: "व्हॉट्सॲपवर ऑर्डर करा",
@@ -140,9 +140,9 @@ const translations = {
     prod_1_name: "गांडूळ खत (वर्मीकंपोस्ट)",
     prod_1_benefit: "मातीची सुपीकता वाढवते, पोत सुधारते",
     prod_2_name: "वर्मीवॉश",
-    prod_2_benefit: "वनस्पती वाढीसाठी द्रव टॉनिक, फवारणी",
+    prod_2_benefit: "वनस्पती वाढीसाठी द्रव टॉनिक",
     prod_3_name: "वर्मी कल्चर (गांडूळ)",
-    prod_3_benefit: "खत बेड सुरू करण्यासाठी, इसेनिया फेटिडा",
+    prod_3_benefit: "खत बेड सुरू करण्यासाठी",
     prod_4_name: "पॉटिंग सॉईल मिक्स",
     prod_4_benefit: "कुंड्यांसाठी तयार आणि परिपूर्ण माती",
     prod_5_name: "निंबोळी पावडर",
@@ -154,7 +154,7 @@ const translations = {
     why_feat_1: "१००% नैसर्गिक व सेंद्रिय",
     why_feat_2: "उत्पादकाकडून थेट पुरवठा",
     why_feat_3: "किरकोळ व ठोक पॅकिंग",
-    why_feat_4: "तपासणी केलेले व तणमुक्त",
+    why_feat_4: "तणमुक्त",
 
     // Before & After Transformation
     trans_badge: "आधी आणि नंतर",
@@ -209,7 +209,7 @@ const translations = {
     footer_link_nurseries: "नर्सरीसाठी",
     footer_link_bulk: "व्यावसायिक ठोक पुरवठा",
     footer_heading_contact: "संपर्क माहिती",
-    footer_address: "वावडदे, ता. व जि. जळगाव, महाराष्ट्र",
+    footer_address: "वावडदे, ता. व जि. जळगाव, महाराष्ट्र<br><strong>पिन कोड: 425001</strong>",
     footer_heading_newsletter: "न्यूजलेटर सदस्यता",
     footer_newsletter_desc: "हंगामी खत प्रमाण तक्ते आणि माहिती मिळवण्यासाठी आमच्या शेतकरी समुदायात सामील व्हा.",
     footer_input_placeholder: "तुमचा ईमेल पत्ता",
@@ -240,7 +240,7 @@ const translations = {
     hero_title_2: "सिद्धि <span class='hero-city-tag'>ऑर्गेनिक्स</span>",
     hero_desc: "जलगांव में हमारे अपने फार्म से तैयार 100% शुद्ध जैविक वर्मीकंपोस्ट। मिट्टी की उर्वरता, कार्बन और फसल की बंपर पैदावार के लिए भरोसेमंद समाधान।",
     hero_feat_1: "प्रीमियम शुद्ध वर्मीकंपोस्ट",
-    hero_feat_2: "लैब-टेस्टेड और खरपतवार मुक्त",
+    hero_feat_2: "खरपतवार मुक्त",
     hero_feat_3: "निर्माता से सीधे आपके पास",
     hero_btn_explore: "उत्पाद देखें",
     hero_btn_wa: "व्हाट्सएप पर ऑर्डर करें",
@@ -250,9 +250,9 @@ const translations = {
     prod_1_name: "वर्मीकंपोस्ट (केंचुआ खाद)",
     prod_1_benefit: "मिट्टी की उर्वरता बढ़ाता है, संरचना सुधारता है",
     prod_2_name: "वर्मीवॉश",
-    prod_2_benefit: "पौधों के विकास के लिए तरल टॉनिक, फोलियर स्प्रे",
+    prod_2_benefit: "पौधों के विकास के लिए तरल टॉनिक",
     prod_3_name: "वर्मी कल्चर (जीवित केंचुए)",
-    prod_3_benefit: "खाद बेड शुरू करने के लिए, इसेनिया फेटिडा",
+    prod_3_benefit: "खाद बेड शुरू करने के लिए",
     prod_4_name: "पॉटिंग सॉइल मिक्स",
     prod_4_benefit: "गमलों के लिए तैयार संतुलित जैविक मिट्टी",
     prod_5_name: "निम्बोली पाउडर",
@@ -264,7 +264,7 @@ const translations = {
     why_feat_1: "100% प्राकृतिक और जैविक",
     why_feat_2: "निर्माता से सीधा संपर्क",
     why_feat_3: "खुदरा और थोक पैक",
-    why_feat_4: "परीक्षित और खरपतवार मुक्त",
+    why_feat_4: "खरपतवार मुक्त",
 
     // Before & After Transformation
     trans_badge: "पहले और बाद में",
@@ -319,7 +319,7 @@ const translations = {
     footer_link_nurseries: "नर्सरी के लिए",
     footer_link_bulk: "थोक व्यावसायिक आपूर्ति",
     footer_heading_contact: "संपर्क सूत्र",
-    footer_address: "वावडदे, ता. व जिला जलगांव, महाराष्ट्र",
+    footer_address: "वावडदे, ता. व जिला जलगांव, महाराष्ट्र<br><strong>पिन कोड: 425001</strong>",
     footer_heading_newsletter: "न्यूज़लेटर सदस्यता",
     footer_newsletter_desc: "मौसम के अनुसार खाद उपयोग चार्ट और अपडेट पाने के लिए हमारे किसान समुदाय से जुड़ें।",
     footer_input_placeholder: "अपना ईमेल पता दर्ज करें",
@@ -350,7 +350,7 @@ const translations = {
     hero_title_2: "સિદ્ધિ <span class='hero-city-tag'>ઓર્ગેનિક્સ</span>",
     hero_desc: "જલગાંવ સ્થિત અમારા ફાર્મમાંથી ૧૦૦% શુદ્ધ જૈવિક વર્મીકમ્પોસ્ટ. જમીનની ફળદ્રુપતા અને પાકના ભરપૂર ઉત્પાદન માટે શ્રેષ્ઠ કુદરતી ખાતર.",
     hero_feat_1: "પ્રીમિયમ શુદ્ધ વર્મીકમ્પોસ્ટ",
-    hero_feat_2: "લેબ-ચકાસાયેલ અને નીંદણ મુક્ત",
+    hero_feat_2: "નીંદણ મુક્ત",
     hero_feat_3: "ઉત્પાદક પાસેથી સીધું",
     hero_btn_explore: "પ્રોડક્ટ્સ જુઓ",
     hero_btn_wa: "વોટ્સએપ પર ઓર્ડર કરો",
@@ -360,9 +360,9 @@ const translations = {
     prod_1_name: "અળસિયા ખાતર (વર્મીકમ્પોસ્ટ)",
     prod_1_benefit: "જમીનની ફળદ્રુપતા વધારે છે, બંધારણ સુધારે છે",
     prod_2_name: "વર્મીવોશ",
-    prod_2_benefit: "છોડના વિકાસ માટે પ્રવાહી ટોનિક, સ્પ્રે",
+    prod_2_benefit: "છોડના વિકાસ માટે પ્રવાહી ટોનિક",
     prod_3_name: "વર્મી કલ્ચર (જીવંત અળસિયા)",
-    prod_3_benefit: "ખાતર બેડ શરૂ કરવા માટે, ઇસેનિયા ફેટિડા",
+    prod_3_benefit: "ખાતર બેડ શરૂ કરવા માટે",
     prod_4_name: "પોટિંગ સોઇલ મિક્સ",
     prod_4_benefit: "કુંડા માટે તૈયાર સંતુલિત કુદરતી માટી",
     prod_5_name: "લીંબોળી પાવડર",
@@ -374,7 +374,7 @@ const translations = {
     why_feat_1: "૧૦૦% કુદરતી અને જૈવિક",
     why_feat_2: "સીધા ઉત્પાદક પાસેથી",
     why_feat_3: "રિટેલ અને જથ્થાબંધ પેકિંગ",
-    why_feat_4: "ચકાસાયેલ અને નીંદણ મુક્ત",
+    why_feat_4: "નીંદણ મુક્ત",
 
     // Before & After Transformation
     trans_badge: "પહેલા અને પછી",
@@ -429,7 +429,7 @@ const translations = {
     footer_link_nurseries: "નર્સરી માટે",
     footer_link_bulk: "જથ્થાબંધ વ્યાપારી પુરવઠો",
     footer_heading_contact: "સંપર્ક વિગત",
-    footer_address: "વાવડદે, તા. અને જી. જલગાંવ, મહારાષ્ટ્ર",
+    footer_address: "વાવડદે, તા. અને જી. જલગાંવ, મહારાષ્ટ્ર<br><strong>પિન કોડ: 425001</strong>",
     footer_heading_newsletter: "ન્યૂઝલેટર સબ્સ્ક્રિપ્શન",
     footer_newsletter_desc: "ખાતરના ઉપયોગના ચાર્ટ અને અપડેટ મેળવવા માટે અમારા ખેડૂત સમુદાય સાથે જોડાઓ.",
     footer_input_placeholder: "તમારું ઈમેલ એડ્રેસ લખો",
@@ -968,6 +968,13 @@ const detailedProductsI18n = {
 };
 
 /* About, Contact and Map page translations */
+/* ========================================================================== */
+/* EDIT ZONE 1: ABOUT, CONTACT AND MAP PAGE TRANSLATIONS                      */
+/* Add or change page-specific text inside the matching language block below. */
+/* Languages: en = English, mr = Marathi, hi = Hindi, gu = Gujarati           */
+/* ========================================================================== */
+
+// ------------------------------ ENGLISH -----------------------------------
 Object.assign(translations.en, {
   about_title: "About Siddhi Organics",
   about_subtitle: "Rooted in science and sustainable farming, dedicated to restoring soil health and empowering cultivators directly from our farm in Jalgaon.",
@@ -1010,6 +1017,7 @@ Object.assign(translations.en, {
   contact_error: "Submission failed. Please try again later."
 });
 
+// ------------------------------ MARATHI -----------------------------------
 Object.assign(translations.mr, {
   about_title: "सिद्धी ऑरगॅनिक्स विषयी",
   about_subtitle: "विज्ञान आणि शाश्वत शेतीवर आधारित, जळगावमधील आमच्या शेतातून मातीचे आरोग्य सुधारण्यासाठी आणि शेतकऱ्यांना सक्षम करण्यासाठी समर्पित.",
@@ -1052,6 +1060,7 @@ Object.assign(translations.mr, {
   contact_error: "संदेश पाठवता आला नाही. कृपया पुन्हा प्रयत्न करा."
 });
 
+// ------------------------------- HINDI ------------------------------------
 Object.assign(translations.hi, {
   about_title: "सिद्धि ऑर्गेनिक्स के बारे में",
   about_subtitle: "विज्ञान और टिकाऊ खेती पर आधारित, जलगांव स्थित अपने खेत से मिट्टी के स्वास्थ्य को बेहतर बनाने और किसानों को सशक्त करने के लिए समर्पित।",
@@ -1094,6 +1103,7 @@ Object.assign(translations.hi, {
   contact_error: "संदेश भेजना विफल रहा। कृपया दोबारा प्रयास करें।"
 });
 
+// ------------------------------ GUJARATI ----------------------------------
 Object.assign(translations.gu, {
   about_title: "સિદ્ધિ ઓર્ગેનિક્સ વિશે",
   about_subtitle: "વિજ્ઞાન અને ટકાઉ ખેતી પર આધારિત, જળગાંવના અમારા ફાર્મમાંથી જમીનનું સ્વાસ્થ્ય સુધારવા અને ખેડૂતોને સશક્ત બનાવવા માટે સમર્પિત.",
@@ -1137,37 +1147,54 @@ Object.assign(translations.gu, {
 });
 
 
+/* ========================================================================== */
+/* EDIT ZONE 2: SHARED HEADER AND FOOTER TRANSLATIONS                         */
+/* Edit navigation, location, Call and WhatsApp labels in this section.       */
+/* Keep the same property key in all four language blocks.                    */
+/* ========================================================================== */
+
+// ------------------------------ ENGLISH -----------------------------------
 Object.assign(translations.en, {
   nav_location: "Location",
   footer_connect_title: "Direct Connect",
   footer_connect_desc: "Speak directly with our team for product enquiries, pricing, and bulk orders.",
-  footer_call_label: "Call Sahebrao",
-  footer_whatsapp_label: "WhatsApp Mayur"
+  footer_call_label: "Call Siddhi Organics",
+  footer_whatsapp_label: "WhatsApp Siddhi Organics"
 });
 
+// ------------------------------ MARATHI -----------------------------------
 Object.assign(translations.mr, {
   nav_location: "ठिकाण",
   footer_connect_title: "थेट संपर्क",
   footer_connect_desc: "उत्पादन चौकशी, किंमत आणि मोठ्या ऑर्डरसाठी आमच्या टीमशी थेट संपर्क साधा.",
-  footer_call_label: "साहेबराव यांना कॉल करा",
-  footer_whatsapp_label: "मयूर यांना व्हॉट्सॲप करा"
+  footer_call_label: "सिद्धी ऑरगॅनिक्सला कॉल करा",
+  footer_whatsapp_label: "सिद्धी ऑरगॅनिक्सला व्हॉट्सॲप करा"
 });
 
+// ------------------------------- HINDI ------------------------------------
 Object.assign(translations.hi, {
   nav_location: "स्थान",
   footer_connect_title: "सीधा संपर्क",
   footer_connect_desc: "उत्पाद पूछताछ, कीमत और बड़ी ऑर्डर के लिए हमारी टीम से सीधे संपर्क करें।",
-  footer_call_label: "साहेबराव को कॉल करें",
-  footer_whatsapp_label: "मयूर को व्हॉट्सऐप करें"
+  footer_call_label: "सिद्धि ऑर्गेनिक्स को कॉल करें",
+  footer_whatsapp_label: "सिद्धि ऑर्गेनिक्स को व्हॉट्सऐप करें"
 });
 
+// ------------------------------ GUJARATI ----------------------------------
 Object.assign(translations.gu, {
   nav_location: "સ્થાન",
   footer_connect_title: "સીધો સંપર્ક",
   footer_connect_desc: "ઉત્પાદન પૂછપરછ, કિંમત અને મોટા ઓર્ડર માટે અમારી ટીમનો સીધો સંપર્ક કરો.",
-  footer_call_label: "સાહેબરાવને કૉલ કરો",
-  footer_whatsapp_label: "મયુરને વોટ્સએપ કરો"
+  footer_call_label: "સિદ્ધિ ઓર્ગેનિક્સને કૉલ કરો",
+  footer_whatsapp_label: "સિદ્ધિ ઓર્ગેનિક્સને વોટ્સએપ કરો"
 });
+
+/* ========================================================================== */
+/* CORE LANGUAGE ENGINE                                                       */
+/* Usually no editing is required below this line.                            */
+/* It manages cookies, language switching and dynamic page translations.      */
+/* ========================================================================== */
+
 function setCookie(name, value, days) {
   let expires = "";
   if (days) {
