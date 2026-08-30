@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Siddhi Organics</title>
   
+  
+   <!-- Browser Tab Logo / Favicon -->
+  <link rel="icon" type="image/png" href="siddhi asset/siddhi-farm-logo.png" />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -52,81 +56,6 @@
       max-width: 1320px;
       margin: 0 auto;
       padding: 0 20px;
-    }
-
-    /* ---------------- Header ---------------- */
-    header {
-      padding: 14px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(211, 229, 205, 0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
-    }
-
-    .nav-wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand-group {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      cursor: pointer;
-    }
-
-    .brand-group img {
-      height: 48px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .brand-title-box h2 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--brand-green-dark);
-      line-height: 1.1;
-      font-family: 'Outfit', sans-serif;
-    }
-
-    .brand-title-box p {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
-
-    .nav-menu a {
-      font-weight: 800;
-      font-size: 0.88rem;
-      letter-spacing: 0.8px;
-      color: var(--brand-green-dark);
-      text-transform: uppercase;
-      transition: var(--transition);
-      cursor: pointer;
-    }
-
-    .nav-menu a:hover,
-    .nav-menu a.active {
-      color: #000;
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.6rem;
-      color: var(--brand-green-dark);
-      cursor: pointer;
     }
 
     /* ---------------- About Main Content ---------------- */
@@ -310,127 +239,31 @@
       font-size: 1.05rem;
     }
 
-    /* ---------------- Footer ---------------- */
-    footer {
-      background-color: var(--footer-bg);
-      color: var(--footer-text);
-      padding: 80px 0 30px;
-      margin-top: 60px;
-    }
 
-    .footer-main-grid {
+    /* Compact Location Map */
+    .location-section { padding: 0 20px 60px; }
+    .location-card {
       display: grid;
-      grid-template-columns: 1.4fr 0.8fr 0.9fr 1.1fr 1.3fr;
-      gap: 36px;
-      margin-bottom: 50px;
+      grid-template-columns: minmax(240px, 0.72fr) minmax(420px, 1.28fr);
+      max-width: 1100px;
+      margin: 0 auto;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1.5px solid var(--card-border);
+      border-radius: 24px;
+      box-shadow: var(--shadow-card);
     }
-
-    .footer-col h4 {
-      color: var(--footer-heading);
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .footer-brand-wrap img {
-      height: 52px;
-      width: auto;
-      object-fit: contain;
-      margin-bottom: 16px;
-      background: #ffffff;
-      padding: 4px 8px;
-      border-radius: 8px;
-    }
-
-    .footer-brand-wrap p {
-      font-size: 0.88rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .footer-social-icons {
-      display: flex;
-      gap: 12px;
-    }
-
-    .footer-social-icons a {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background-color: #1a3820;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      transition: var(--transition);
-    }
-
-    .footer-social-icons a:hover {
-      background-color: var(--cta-lime);
-      color: #0d1e10;
-      transform: translateY(-2px);
-    }
-
-    .footer-nav-list {
-      list-style: none;
-    }
-
-    .footer-nav-list li {
-      margin-bottom: 10px;
-    }
-
-    .footer-nav-list a {
-      font-size: 0.88rem;
-      color: var(--footer-text);
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .footer-nav-list a:hover {
-      color: #ffffff;
-      padding-left: 4px;
-    }
-
-    .footer-contact-list {
-      list-style: none;
-    }
-
-    .footer-contact-list li {
-      margin-bottom: 14px;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.88rem;
-      line-height: 1.45;
-    }
-
-    .footer-contact-list i {
-      color: var(--cta-lime);
-      margin-top: 3px;
-      font-size: 1rem;
-    }
-
-    .footer-bottom-bar {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.82rem;
-      color: #7b947f;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .footer-bottom-links a {
-      color: #7b947f;
-      margin-left: 16px;
-      transition: var(--transition);
-    }
-
-    .footer-bottom-links a:hover {
-      color: #ffffff;
+    .location-copy { padding: 30px; align-self: center; }
+    .location-copy h2 { margin-bottom: 10px; color: var(--brand-green-dark); font-family: 'Outfit', sans-serif; font-size: 1.65rem; }
+    .location-copy p { margin-bottom: 18px; color: #405843; line-height: 1.6; }
+    .location-map { min-height: 285px; }
+    .location-map iframe { display: block; width: 100%; height: 100%; min-height: 285px; border: 0; }
+    .btn-map-link { display: inline-flex; align-items: center; gap: 8px; padding: 10px 17px; color: #fff; background: var(--brand-forest); border-radius: 50px; font-size: .84rem; font-weight: 800; }
+    .btn-map-link:hover { background: var(--btn-green-hover); transform: translateY(-2px); }
+    @media (max-width: 768px) {
+      .location-card { grid-template-columns: 1fr; }
+      .location-copy { padding: 22px 20px; }
+      .location-map, .location-map iframe { min-height: 240px; }
     }
 
     /* Responsive */
@@ -441,69 +274,29 @@
       .founders-grid {
         grid-template-columns: 1fr;
       }
-      .footer-main-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+
     }
 
     @media (max-width: 768px) {
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 74px;
-        left: 0;
-        width: 100%;
-        background: #c7dec1;
-        padding: 20px;
-        border-bottom: 1px solid #a4c28f;
-      }
-      .nav-menu.open {
-        display: flex;
-      }
-      .mobile-menu-btn {
-        display: block;
-      }
+
+
+
       .story-card-surface {
         padding: 25px;
       }
-      .footer-main-grid {
-        grid-template-columns: 1fr;
-      }
+
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="container nav-wrap">
-      <a href="index.html" class="brand-group">
-        <img src="siddhi asset/siddhi-farm-logo.png" alt="Siddhi Organics Logo" />
-        <div class="brand-title-box">
-          <h2>Siddhi Organics</h2>
-          <p data-i18n="brand_tagline">Pure, Natural Soil Solutions.</p>
-        </div>
-      </a>
-
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="about.html" class="active">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <!-- About Header -->
   <section class="about-header-section">
     <div class="container">
-      <h1 class="about-title">About Siddhi Organics</h1>
-      <p class="about-subtitle">Rooted in science and sustainable farming, dedicated to restoring soil health and empowering cultivators directly from our farm in Jalgaon.</p>
+      <h1 class="about-title" data-i18n="about_title">About Siddhi Organics</h1>
+      <p class="about-subtitle" data-i18n="about_subtitle">Rooted in science and sustainable farming, dedicated to restoring soil health and empowering cultivators directly from our farm in Jalgaon.</p>
     </div>
   </section>
 
@@ -512,9 +305,9 @@
     <div class="story-card-surface">
       <div class="story-grid">
         <div class="story-text">
-          <h3>Rooted in Jalgaon: Our Story</h3>
-          <p>Siddhi Organics was born out of a deep-rooted passion for sustainable farming and an unwavering commitment to healing the soil from the ground up. Operating directly from our farm facility in Wavadade, Jalgaon, we witnessed firsthand how chemical-heavy agriculture was rapidly depleting organic carbon and draining local soil vitality. We knew that true, long-lasting crop health could only be restored by turning back to nature.</p>
-          <p>Driven by technical agricultural expertise—led by our Managing Director Sahebrao Laxman Phuse (Bari) and Founder & Agricultural Technologist Mayur Sahebrao Phuse (Bari) (B.Sc. Agriculture)—we turned to nature's original recyclers: earthworms. Today, Siddhi Organics stands as an independent, producer-direct enterprise overseeing every step of bio-conversion to bring 100% pure earth solutions to cultivators across Maharashtra.</p>
+          <h3 data-i18n="about_story_title">Rooted in Jalgaon: Our Story</h3>
+          <p data-i18n="about_story_p1">Siddhi Organics was born out of a deep-rooted passion for sustainable farming and an unwavering commitment to healing the soil from the ground up. Operating directly from our farm facility in Wavadade, Jalgaon, we witnessed firsthand how chemical-heavy agriculture was rapidly depleting organic carbon and draining local soil vitality. We knew that true, long-lasting crop health could only be restored by turning back to nature.</p>
+          <p data-i18n="about_story_p2">Driven by technical agricultural expertise—led by our Managing Director Sahebrao Laxman Phuse (Bari) and Founder & Agricultural Technologist Mayur Sahebrao Phuse (Bari) (B.Sc. Agriculture)—we turned to nature's original recyclers: earthworms. Today, Siddhi Organics stands as an independent, producer-direct enterprise overseeing every step of bio-conversion to bring 100% pure earth solutions to cultivators across Maharashtra.</p>
         </div>
         <div class="story-img-box">
           <img src="siddhi asset/footer-image.png" alt="Siddhi Organics Farm" onerror="this.src='https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80'" />
@@ -526,7 +319,7 @@
   <!-- Founders Section -->
   <section class="founders-section">
     <div class="container">
-      <h2 class="section-heading">Leadership & Management</h2>
+      <h2 class="section-heading" data-i18n="about_leadership_title">Leadership & Management</h2>
       
       <div class="founders-grid">
         
@@ -536,10 +329,10 @@
             <img src="siddhi asset/sahebrao.png" alt="Sahebrao Laxman Phuse (Bari)" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80'" />
           </div>
           <h3 class="founder-name">Sahebrao Laxman Phuse (Bari)</h3>
-          <span class="founder-role">Managing Director</span>
-          <div class="founder-edu"><i class="fas fa-seedling"></i> Farm Operations & Management</div>
+          <span class="founder-role" data-i18n="about_role_md">Managing Director</span>
+          <div class="founder-edu"><i class="fas fa-seedling"></i> <span data-i18n="about_md_edu">Farm Operations & Management</span></div>
           <a href="https://wa.me/918975753851?text=Hello%20Sahebrao,%20I%20want%20to%20inquire%20about%20Siddhi%20Organics%20products." target="_blank" class="founder-contact">
-            <i class="fab fa-whatsapp"></i> +91 89757 53851
+            <i class="fab fa-whatsapp"></i> <span data-i18n="about_whatsapp">WhatsApp</span>: +91 89757 53851
           </a>
         </div>
 
@@ -549,10 +342,10 @@
             <img src="siddhi asset/mayur.png" alt="Mayur Sahebrao Phuse (Bari)" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'" />
           </div>
           <h3 class="founder-name">Mayur Sahebrao Phuse (Bari)</h3>
-          <span class="founder-role">Founder</span>
-          <div class="founder-edu"><i class="fas fa-graduation-cap"></i> B.Sc. Agriculture</div>
+          <span class="founder-role" data-i18n="about_role_founder">Founder</span>
+          <div class="founder-edu"><i class="fas fa-graduation-cap"></i> <span data-i18n="about_founder_edu">B.Sc. Agriculture</span></div>
           <a href="https://wa.me/918055227005?text=Hello%20Mayur,%20I%20want%20to%20discuss%20organic%20farming%20with%20Siddhi%20Organics." target="_blank" class="founder-contact">
-            <i class="fab fa-whatsapp"></i> +91 80552 27005
+            <i class="fab fa-whatsapp"></i> <span data-i18n="about_whatsapp">WhatsApp</span>: +91 80552 27005
           </a>
         </div>
 
@@ -560,92 +353,75 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer id="contact">
-    <div class="container">
-      <div class="footer-main-grid">
-        
-        <!-- Col 1: Brand -->
-        <div class="footer-col footer-brand-wrap">
-          <img src="siddhi asset/siddhi-farm-logo.png" alt="Siddhi Organics" />
-          <p>At Siddhi Organics, we're committed to restoring soil biodiversity, enhancing crop vitality, and helping sustainable agriculture thrive across Maharashtra.</p>
-          <div class="footer-social-icons">
-            <a href="https://facebook.com/siddhi_organics_21" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com/siddhi_organics_21" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/918055227005" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          </div>
-        </div>
 
-        <!-- Col 2: About Links -->
-        <div class="footer-col">
-          <h4>About</h4>
-          <ul class="footer-nav-list">
-            <li><a href="about.html">Our Story</a></li>
-            <li><a href="index.html#benefits">Farm Facility</a></li>
-            <li><a href="index.html#benefits">Quality Standards</a></li>
-            <li><a href="index.html#transformation">Transformation</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Benefits Links -->
-        <div class="footer-col">
-          <h4>Benefits</h4>
-          <ul class="footer-nav-list">
-            <li><a href="products.html">For Crop Farmers</a></li>
-            <li><a href="products.html">For Home Gardeners</a></li>
-            <li><a href="products.html">For Plant Nurseries</a></li>
-            <li><a href="products.html">Bulk Commercial Supply</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 4: Contact Info -->
-        <div class="footer-col">
-          <h4>Contact Info</h4>
-          <ul class="footer-contact-list">
-            <li>
-              <i class="fas fa-phone"></i>
-              <span><a href="tel:8055227005">+91 80552 27005</a></span>
-            </li>
-            <li>
-              <i class="fas fa-envelope"></i>
-              <span><a href="mailto:contact@siddhiorganics.com">contact@siddhiorganics.com</a></span>
-            </li>
-            <li>
-              <i class="fas fa-location-dot"></i>
-              <span>Wavadade, Tal. & Dist. Jalgaon, Maharashtra</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Col 5: Newsletter -->
-        <div class="footer-col">
-          <h4>Quick Connect</h4>
-          <p>Reach out directly to our managing team via phone or WhatsApp for commercial bookings.</p>
-          <a href="https://wa.me/918055227005" target="_blank" class="founder-contact" style="background: #8ac926; color: #0d1e10; border: none; font-weight: 800; display: inline-flex; margin-top: 10px;">
-            <i class="fab fa-whatsapp" style="color: #0d1e10;"></i> Chat with Founders
-          </a>
-        </div>
-
+  <!-- Farm Location Map -->
+  <section class="location-section" aria-labelledby="aboutMapTitle">
+    <div class="location-card">
+      <div class="location-copy">
+        <h2 id="aboutMapTitle" data-i18n="map_title">Find Us on Map</h2>
+        <p data-i18n="map_description">Visit our exact farm facility location via Google Maps.</p>
+        <a href="https://share.google/Yqt1ieoSCb9WSSwn6" target="_blank" rel="noopener noreferrer" class="btn-map-link">
+          <i class="fas fa-map-location-dot" aria-hidden="true"></i> <span data-i18n="map_open">Open in Google Maps</span>
+        </a>
       </div>
-
-      <!-- Bottom Bar -->
-      <div class="footer-bottom-bar">
-        <div>&copy; 2026 Siddhi Organics. All Rights Reserved.</div>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Shipping & Returns</a>
-        </div>
+      <div class="location-map">
+        <iframe title="Siddhi Organics location on Google Maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d798861.9172496046!2d73.96885701646883!3d20.43135040156963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd913c3c4735c5d%3A0x56e72b8966fb07bb!2sSiddhi%20Organics!5e1!3m2!1sen!2sin!4v1788041009894!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
     </div>
-  </footer>
+  </section>
 
+  <div id="site-footer"></div>
+
+  <!-- Load shared header, footer, and language engine -->
   <script>
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    const navMenu = document.getElementById('navMenu');
-    mobileBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-    });
+    async function loadComponent(targetId, file) {
+      const target = document.getElementById(targetId);
+      const response = await fetch(file);
+      if (!response.ok) throw new Error(`Unable to load ${file}: ${response.status}`);
+      target.innerHTML = await response.text();
+      target.querySelectorAll('script').forEach(oldScript => {
+        const script = document.createElement('script');
+        [...oldScript.attributes].forEach(attr => script.setAttribute(attr.name, attr.value));
+        script.textContent = oldScript.textContent;
+        oldScript.replaceWith(script);
+      });
+    }
+
+    window.componentsReady = Promise.all([
+      loadComponent('site-header', 'header.html'),
+      loadComponent('site-footer', 'footer.html')
+    ]).then(() => {
+      const brand = document.querySelector('#site-header .brand-group');
+      if (brand) brand.onclick = () => { window.location.href = 'index.html'; };
+
+      const destinations = {
+        nav_home: 'index.html#home',
+        nav_benefits: 'index.html#benefits',
+        nav_transformation: 'index.html#transformation'
+      };
+      document.querySelectorAll('#site-header .nav-menu a').forEach(link => {
+        const key = link.dataset.i18n;
+        if (destinations[key]) {
+          link.removeAttribute('onclick');
+          link.href = destinations[key];
+        }
+        if (link.getAttribute('href') === 'about.html') link.setAttribute('aria-current', 'page');
+      });
+
+      return new Promise((resolve, reject) => {
+        const languageScript = document.createElement('script');
+        languageScript.src = 'lang.js';
+        languageScript.onload = () => {
+          if (typeof applyLanguage === 'function') {
+            const lang = typeof getCurrentLang === 'function' ? getCurrentLang() : 'en';
+            applyLanguage(lang);
+          }
+          resolve();
+        };
+        languageScript.onerror = reject;
+        document.body.appendChild(languageScript);
+      });
+    }).catch(error => console.error('Component loading failed:', error));
   </script>
 </body>
 </html>

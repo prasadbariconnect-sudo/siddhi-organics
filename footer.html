@@ -1,0 +1,312 @@
+<style>
+
+  :root {
+    --brand-green-dark: #142917;
+    --brand-forest: #1b4332;
+    --cta-lime: #8ac926;
+    --text-muted: #2f4531;
+    --footer-bg: #0d1e10;
+    --footer-text: #c2d1c4;
+    --footer-heading: #ffffff;
+    --white: #ffffff;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .container { max-width: 1320px; margin: 0 auto; padding: 0 20px; }
+  a { text-decoration: none; color: inherit; }
+
+/* Footer */
+    footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 160px 0 30px;
+    }
+
+    .footer-main-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr 0.9fr 1.1fr 1.3fr;
+      gap: 36px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h4 {
+      color: var(--footer-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .footer-brand-wrap img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 16px;
+      background: #ffffff;
+      padding: 4px 8px;
+      border-radius: 8px;
+    }
+
+    .footer-brand-wrap p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .footer-social-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social-icons a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #1a3820;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-social-icons a:hover {
+      background-color: var(--cta-lime);
+      color: #0d1e10;
+      transform: translateY(-2px);
+    }
+
+    .footer-nav-list {
+      list-style: none;
+    }
+
+    .footer-nav-list li {
+      margin-bottom: 10px;
+    }
+
+    .footer-nav-list a {
+      font-size: 0.88rem;
+      color: var(--footer-text);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .footer-nav-list a:hover {
+      color: #ffffff;
+      padding-left: 4px;
+    }
+
+    .footer-contact-list {
+      list-style: none;
+    }
+
+    .footer-contact-list li {
+      margin-bottom: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .footer-contact-list i {
+      color: var(--cta-lime);
+      margin-top: 3px;
+      font-size: 1rem;
+    }
+
+    .footer-lang-box {
+      margin-top: 18px;
+    }
+
+    .footer-lang-select {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      outline: none;
+      cursor: pointer;
+      width: 100%;
+      max-width: 220px;
+    }
+
+    .footer-lang-select option {
+      background: #0d1e10;
+      color: #ffffff;
+    }
+
+    .direct-connect-box p {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .footer-action-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 0.82rem;
+      transition: var(--transition);
+    }
+
+    .footer-call-btn {
+      color: #ffffff;
+      background: #234d28;
+    }
+
+    .footer-whatsapp-btn {
+      color: #0d1e10;
+      background: var(--cta-lime);
+    }
+
+    .footer-action-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: #7b947f;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom-links a {
+      color: #7b947f;
+      margin-left: 16px;
+      transition: var(--transition);
+    }
+
+    .footer-bottom-links a:hover {
+      color: #ffffff;
+    }
+
+  @media (max-width: 1150px) {
+    .footer-main-grid { grid-template-columns: 1fr 1fr 1fr; gap: 30px; }
+  }
+  @media (max-width: 992px) {
+    .footer-main-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    .footer-main-grid { grid-template-columns: 1fr; }
+    .footer-bottom-bar { flex-direction: column; text-align: center; }
+    .footer-bottom-links a { margin: 0 8px; }
+  }
+
+</style>
+
+<footer id="contact">
+    <div class="container">
+      <div class="footer-main-grid">
+        
+        <!-- Col 1: Brand -->
+        <div class="footer-col footer-brand-wrap">
+          <img src="siddhi asset/siddhi-farm-logo.png" alt="Siddhi Organics" />
+          <p data-i18n="footer_about_text">At Siddhi Organics, we're committed to restoring soil biodiversity, enhancing crop vitality, and helping sustainable agriculture thrive across Maharashtra.</p>
+          <div class="footer-social-icons">
+            <a href="https://facebook.com/siddhi_organics_21" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/siddhi_organics_21" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/918055227005" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+
+          <!-- Quick Footer Language Selector -->
+          <div class="footer-lang-box">
+            <select id="footerLangSelect" class="footer-lang-select" onchange="applyLanguage(this.value)">
+              <option value="en">🌐 English</option>
+              <option value="mr">🌐 मराठी (Marathi)</option>
+              <option value="hi">🌐 हिंदी (Hindi)</option>
+              <option value="gu">🌐 ગુજરાતી (Gujarati)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Col 2: About Links -->
+        <div class="footer-col">
+          <h4 data-i18n="footer_heading_about">About</h4>
+          <ul class="footer-nav-list">
+            <li><a onclick="showHome(); scrollToSection('home')" data-i18n="footer_link_story">Our Story</a></li>
+            <li><a onclick="showHome(); scrollToSection('benefits')" data-i18n="footer_link_facility">Farm Facility</a></li>
+            <li><a onclick="showHome(); scrollToSection('benefits')" data-i18n="footer_link_quality">Quality Standards</a></li>
+            <li><a onclick="showHome(); scrollToSection('transformation')" data-i18n="footer_link_trans">Transformation</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Benefits Links -->
+        <div class="footer-col">
+          <h4 data-i18n="footer_heading_benefits">Benefits</h4>
+          <ul class="footer-nav-list">
+            <li><a href="products.html" data-i18n="footer_link_farmers">For Crop Farmers</a></li>
+            <li><a href="products.html" data-i18n="footer_link_gardeners">For Home Gardeners</a></li>
+            <li><a href="products.html" data-i18n="footer_link_nurseries">For Plant Nurseries</a></li>
+            <li><a href="products.html" data-i18n="footer_link_bulk">Bulk Commercial Supply</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Info -->
+        <div class="footer-col">
+          <h4 data-i18n="footer_heading_contact">Contact Info</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fas fa-phone"></i>
+              <span><a href="tel:8055227005">+91 80552 27005</a></span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span><a href="mailto:contact@siddhiorganics.com">contact@siddhiorganics.com</a></span>
+            </li>
+            <li>
+              <i class="fas fa-location-dot"></i>
+              <span data-i18n="footer_address">Wavadade, Tal. & Dist. Jalgaon, Maharashtra</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Direct Call and WhatsApp -->
+        <div class="footer-col direct-connect-box">
+          <h4 data-i18n="footer_connect_title">Direct Connect</h4>
+          <p data-i18n="footer_connect_desc">Speak directly with our team for product enquiries, pricing, and bulk orders.</p>
+          <div class="footer-action-group">
+            <a href="tel:+918055227005" class="footer-action-btn footer-call-btn">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <span><span data-i18n="footer_call_label">Call</span><br>+91 80552 27005</span>
+            </a>
+            <a href="https://wa.me/918055227005?text=Hello%20Siddhi%20Organics,%20I%20want%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener noreferrer" class="footer-action-btn footer-whatsapp-btn">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              <span><span data-i18n="footer_whatsapp_label">WhatsApp</span><br>+91 80552 27005</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div data-i18n="footer_copyright">&copy; 2026 Siddhi Organics. All Rights Reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="#" data-i18n="footer_link_privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer_link_terms">Terms of Service</a>
+          <a href="#" data-i18n="footer_link_shipping">Shipping & Returns</a>
+        </div>
+      </div>
+    </div>
+  </footer>

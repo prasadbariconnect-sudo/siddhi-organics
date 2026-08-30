@@ -1,0 +1,260 @@
+<style>
+
+  :root {
+    --brand-green-dark: #142917;
+    --brand-forest: #1b4332;
+    --cta-lime: #8ac926;
+    --text-muted: #2f4531;
+    --footer-bg: #0d1e10;
+    --footer-text: #c2d1c4;
+    --footer-heading: #ffffff;
+    --white: #ffffff;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .container { max-width: 1320px; margin: 0 auto; padding: 0 20px; }
+  a { text-decoration: none; color: inherit; }
+
+/* ---------------- Header ---------------- */
+    #site-header {
+      display: block;
+      position: relative;
+      height: 77px;
+      background: #d3e5cd;
+    }
+
+    header {
+      padding: 14px 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1000;
+      width: 100%;
+      background: #d3e5cd;
+      border-bottom: 1px solid #b7cfaf;
+      box-shadow: 0 3px 12px rgba(20, 41, 23, 0.09);
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 48px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .brand-group img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-title-box h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--brand-green-dark);
+      line-height: 1.1;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .brand-title-box p {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+    }
+
+    .nav-menu a {
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 0.8px;
+      color: var(--brand-green-dark);
+      text-transform: uppercase;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .nav-menu a:hover {
+      color: #000;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: 18px;
+    }
+
+    .header-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 12px;
+      color: #ffffff;
+      background: var(--brand-forest);
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .header-location:hover {
+      background: #102f20;
+      transform: translateY(-2px);
+    }
+
+    .header-socials {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .header-socials a {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      color: var(--brand-green-dark);
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(20, 41, 23, 0.16);
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .header-socials a:hover {
+      color: #ffffff;
+      background: var(--brand-forest);
+      transform: translateY(-2px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      color: var(--brand-green-dark);
+      cursor: pointer;
+      line-height: 1;
+    }
+
+  @media (max-width: 768px) {
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: #c7dec1;
+      padding: 20px;
+      margin: 0;
+      border-bottom: 1px solid #a4c28f;
+      border-top: 0;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .nav-menu.open { display: flex; }
+    .mobile-menu-btn { display: block; }
+    .header-actions { margin-left: auto; gap: 6px; }
+    .header-location { width: 32px; height: 32px; justify-content: center; padding: 0; }
+    .header-location span { display: none; }
+    .header-socials { gap: 4px; }
+    .header-socials a { width: 30px; height: 30px; font-size: .8rem; }
+  }
+
+  @media (max-width: 480px) {
+    #site-header { height: 69px; }
+    header { padding: 10px 0; }
+    .nav-wrap { gap: 6px; }
+    .brand-group { gap: 7px; }
+    .brand-group img { height: 40px; }
+    .brand-title-box h2 { font-size: 1rem; }
+    .brand-title-box p { display: none; }
+    .header-actions { gap: 3px; }
+    .header-socials { gap: 3px; }
+    .mobile-menu-btn { font-size: 1.35rem; margin-left: 2px; }
+  }
+
+</style>
+
+<header>
+    <div class="container nav-wrap">
+      <div class="brand-group" onclick="showHome()">
+        <img src="siddhi asset/siddhi-farm-logo.png" alt="Siddhi Organics Logo" />
+        <div class="brand-title-box">
+          <h2>Siddhi Organics</h2>
+          <p data-i18n="brand_tagline">Pure, Natural Soil Solutions.</p>
+        </div>
+      </div>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a onclick="showHome(); scrollToSection('home')" data-i18n="nav_home">Home</a></li>
+        <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+        <li><a onclick="showHome(); scrollToSection('benefits')" data-i18n="nav_benefits">Benefits</a></li>
+        <li><a onclick="showHome(); scrollToSection('transformation')" data-i18n="nav_transformation">Transformation</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <a href="index.html#footer-map" class="header-location" aria-label="View our location on the map">
+          <i class="fas fa-location-dot" aria-hidden="true"></i>
+          <span data-i18n="nav_location">Location</span>
+        </a>
+        <div class="header-socials" aria-label="Social media links">
+          <a href="https://facebook.com/siddhi_organics_21" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com/siddhi_organics_21" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/918055227005" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+
+<script>
+(() => {
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const navMenu = document.getElementById('navMenu');
+  if (!mobileBtn || !navMenu) return;
+
+  const closeMenu = () => {
+    navMenu.classList.remove('open');
+    const icon = mobileBtn.querySelector('i');
+    icon?.classList.remove('fa-xmark');
+    icon?.classList.add('fa-bars');
+    mobileBtn.setAttribute('aria-expanded', 'false');
+  };
+
+  mobileBtn.setAttribute('aria-expanded', 'false');
+  mobileBtn.addEventListener('click', event => {
+    event.stopPropagation();
+    const isOpen = navMenu.classList.toggle('open');
+    const icon = mobileBtn.querySelector('i');
+    icon?.classList.toggle('fa-bars', !isOpen);
+    icon?.classList.toggle('fa-xmark', isOpen);
+    mobileBtn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('click', event => {
+    if (navMenu.classList.contains('open') && !navMenu.contains(event.target) && !mobileBtn.contains(event.target)) closeMenu();
+  });
+})();
+</script>

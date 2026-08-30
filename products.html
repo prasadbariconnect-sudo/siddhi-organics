@@ -60,81 +60,6 @@
       padding: 0 20px;
     }
 
-    /* ---------------- Header ---------------- */
-    header {
-      padding: 14px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(211, 229, 205, 0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
-    }
-
-    .nav-wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand-group {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      cursor: pointer;
-    }
-
-    .brand-group img {
-      height: 48px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .brand-title-box h2 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--brand-green-dark);
-      line-height: 1.1;
-      font-family: 'Outfit', sans-serif;
-    }
-
-    .brand-title-box p {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
-
-    .nav-menu a {
-      font-weight: 800;
-      font-size: 0.88rem;
-      letter-spacing: 0.8px;
-      color: var(--brand-green-dark);
-      text-transform: uppercase;
-      transition: var(--transition);
-      cursor: pointer;
-    }
-
-    .nav-menu a:hover,
-    .nav-menu a.active {
-      color: #000;
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.6rem;
-      color: var(--brand-green-dark);
-      cursor: pointer;
-    }
-
     /* ---------------- Water Wave Filters ---------------- */
     .catalog-header {
       text-align: center;
@@ -726,286 +651,93 @@
       box-shadow: 0 12px 24px rgba(138, 201, 38, 0.4);
     }
 
-    /* Metric Widget */
-    .cta-metric-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 24px 28px;
-      width: 320px;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      flex-shrink: 0;
-    }
-
-    .metric-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #2d4a32;
-      margin-bottom: 14px;
-    }
-
-    .metric-gauge-wrap {
-      text-align: center;
-      margin-bottom: 16px;
-      position: relative;
-    }
-
-    .metric-gauge-wrap svg {
-      width: 170px;
-      height: 95px;
-    }
-
-    .metric-score-label {
-      position: absolute;
-      bottom: 2px;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-    }
-
-    .metric-score-label .score-val {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--brand-green-dark);
-      line-height: 1;
-      font-family: 'Outfit', sans-serif;
-    }
-
-    .metric-score-label .score-tag {
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      color: #557a5b;
-    }
-
-    .metric-bar-group {
-      margin-top: 10px;
-    }
-
-    .metric-bar-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #4a634e;
-      margin-bottom: 4px;
-    }
-
-    .metric-progress {
-      height: 6px;
-      width: 100%;
-      background: #e1ebd9;
-      border-radius: 10px;
+    /* CTA Google Map Card */
+    .cta-map-card {
+      width: min(390px, 100%);
+      flex: 0 0 min(390px, 100%);
+      padding: 18px;
       overflow: hidden;
-      margin-bottom: 10px;
+      color: var(--brand-green-dark);
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 20px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(12px);
     }
 
-    .metric-progress-fill {
-      height: 100%;
-      border-radius: 10px;
-      background: linear-gradient(90deg, #52b788, #2d6a4f);
-    }
-
-    /* ---------------- Footer ---------------- */
-    footer {
-      background-color: var(--footer-bg);
-      color: var(--footer-text);
-      padding: 160px 0 30px;
-    }
-
-    .footer-main-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 0.8fr 0.9fr 1.1fr 1.3fr;
-      gap: 36px;
-      margin-bottom: 50px;
-    }
-
-    .footer-col h4 {
-      color: var(--footer-heading);
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .footer-brand-wrap img {
-      height: 52px;
-      width: auto;
-      object-fit: contain;
-      margin-bottom: 16px;
-      background: #ffffff;
-      padding: 4px 8px;
-      border-radius: 8px;
-    }
-
-    .footer-brand-wrap p {
-      font-size: 0.88rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .footer-social-icons {
-      display: flex;
-      gap: 12px;
-    }
-
-    .footer-social-icons a {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background-color: #1a3820;
-      color: #fff;
+    .cta-map-heading {
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      transition: var(--transition);
+      gap: 10px;
+      margin-bottom: 5px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.18rem;
+      font-weight: 800;
+      line-height: 1.25;
     }
 
-    .footer-social-icons a:hover {
-      background-color: var(--cta-lime);
-      color: #0d1e10;
-      transform: translateY(-2px);
-    }
-
-    .footer-nav-list {
-      list-style: none;
-    }
-
-    .footer-nav-list li {
-      margin-bottom: 10px;
-    }
-
-    .footer-nav-list a {
-      font-size: 0.88rem;
-      color: var(--footer-text);
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .footer-nav-list a:hover {
+    .cta-map-heading i {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      place-items: center;
       color: #ffffff;
-      padding-left: 4px;
+      background: var(--brand-forest);
+      border-radius: 50%;
     }
 
-    .footer-contact-list {
-      list-style: none;
-    }
-
-    .footer-contact-list li {
-      margin-bottom: 14px;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.88rem;
+    .cta-map-description {
+      margin: 0 0 14px 44px;
+      color: #58705c;
+      font-size: 0.78rem;
       line-height: 1.45;
     }
 
-    .footer-contact-list i {
-      color: var(--cta-lime);
-      margin-top: 3px;
-      font-size: 1rem;
-    }
-
-    .footer-lang-box {
-      margin-top: 18px;
-    }
-
-    .footer-lang-select {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: #ffffff;
-      padding: 8px 14px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      outline: none;
-      cursor: pointer;
+    .map-container {
+      position: relative;
       width: 100%;
-      max-width: 220px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #dfe9dc;
+      border: 1px solid #d0dfcc;
+      border-radius: 13px;
     }
 
-    .footer-lang-select option {
-      background: #0d1e10;
-      color: #ffffff;
+    .map-container iframe {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
-    .newsletter-box p {
-      font-size: 0.88rem;
-      line-height: 1.5;
-      margin-bottom: 16px;
-    }
-
-    .newsletter-form {
+    .btn-map-link {
       display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .newsletter-input {
-      width: 100%;
-      padding: 13px 18px;
-      border-radius: 50px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #fff;
-      font-size: 0.88rem;
-      outline: none;
-    }
-
-    .btn-subscribe {
-      background-color: var(--cta-lime);
-      color: #0d1e10;
-      font-weight: 800;
-      font-size: 0.9rem;
-      padding: 12px 24px;
-      border-radius: 50px;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      transition: var(--transition);
-    }
-
-    .btn-subscribe:hover {
-      background-color: var(--cta-lime-hover);
-      transform: translateY(-2px);
-    }
-
-    .footer-bottom-bar {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.82rem;
-      color: #7b947f;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .footer-bottom-links a {
-      color: #7b947f;
-      margin-left: 16px;
-      transition: var(--transition);
-    }
-
-    .footer-bottom-links a:hover {
+      gap: 9px;
+      width: 100%;
+      margin-top: 13px;
+      padding: 11px 16px;
       color: #ffffff;
+      background: var(--brand-forest);
+      border-radius: 11px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      transition: var(--transition);
+    }
+
+    .btn-map-link:hover {
+      background: #102f20;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(20, 41, 23, 0.24);
     }
 
     /* ---------------- Responsive ---------------- */
     @media (max-width: 1150px) {
-      .footer-main-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 30px;
-      }
+
     }
 
     @media (max-width: 992px) {
@@ -1032,30 +764,13 @@
       .btn-cta-order {
         margin: 0 auto;
       }
-      .footer-main-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+
     }
 
     @media (max-width: 768px) {
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 74px;
-        left: 0;
-        width: 100%;
-        background: #c7dec1;
-        padding: 20px;
-        border-bottom: 1px solid #a4c28f;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      }
-      .nav-menu.open {
-        display: flex;
-      }
-      .mobile-menu-btn {
-        display: block;
-      }
+
+
+
       .products-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
@@ -1069,19 +784,13 @@
       .detail-img-box {
         height: 260px;
       }
-      .cta-metric-card {
+      .cta-map-card {
         width: 100%;
+        flex-basis: auto;
       }
-      .footer-main-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-bottom-bar {
-        flex-direction: column;
-        text-align: center;
-      }
-      .footer-bottom-links a {
-        margin: 0 8px;
-      }
+
+
+
     }
 
     @media (max-width: 480px) {
@@ -1106,29 +815,7 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="container nav-wrap">
-      <a href="index.html" class="brand-group">
-        <img src="siddhi asset/siddhi-farm-logo.png" alt="Siddhi Organics Logo" />
-        <div class="brand-title-box">
-          <h2>Siddhi Organics</h2>
-          <p data-i18n="brand_tagline">Pure, Natural Soil Solutions.</p>
-        </div>
-      </a>
-
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-        <li><a href="products.html" class="active" data-i18n="nav_products">Products</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <!-- ==================== VIEW 1: PRODUCTS CATALOG ==================== -->
   <main id="catalogView">
@@ -1269,142 +956,71 @@
           </a>
         </div>
 
-        <!-- Metric Widget -->
-        <div class="cta-metric-card">
-          <div class="metric-header">
-            <span><i class="fas fa-shield-halved" style="color: #2d6a4f;"></i> <span data-i18n="metric_purity">Purity Index</span></span>
-            <span style="color: #6b8f71;" data-i18n="metric_tested">Lab Tested</span>
+        <!-- Google Map Card -->
+        <aside class="cta-map-card" aria-label="Siddhi Organics location">
+          <h3 class="cta-map-heading"><i class="fas fa-map-location-dot" aria-hidden="true"></i> Find Us on Map</h3>
+          <p class="cta-map-description">Visit our exact farm facility location via Google Maps.</p>
+          <div class="map-container">
+            <iframe title="Siddhi Organics location on Google Maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d798861.9172496046!2d73.96885701646883!3d20.43135040156963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd913c3c4735c5d%3A0x56e72b8966fb07bb!2sSiddhi%20Organics!5e1!3m2!1sen!2sin!4v1788041009894!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </div>
-          
-          <div class="metric-gauge-wrap">
-            <svg viewBox="0 0 100 55">
-              <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="#e1ebd9" stroke-width="9" stroke-linecap="round" />
-              <path d="M 10 50 A 40 40 0 0 1 82 25" fill="none" stroke="#1b4332" stroke-width="9" stroke-linecap="round" />
-            </svg>
-            <div class="metric-score-label">
-              <div class="score-val" data-i18n="metric_score_val">100%</div>
-              <div class="score-tag" data-i18n="metric_score_tag">Pure Organic</div>
-            </div>
-          </div>
-
-          <div class="metric-bar-group">
-            <div class="metric-bar-row">
-              <span data-i18n="metric_vitality">Soil Vitality</span>
-              <span>95%</span>
-            </div>
-            <div class="metric-progress">
-              <div class="metric-progress-fill" style="width: 95%;"></div>
-            </div>
-
-            <div class="metric-bar-row">
-              <span data-i18n="metric_chem_free">Weed & Chemical Free</span>
-              <span>100%</span>
-            </div>
-            <div class="metric-progress">
-              <div class="metric-progress-fill" style="width: 100%;"></div>
-            </div>
-          </div>
-        </div>
+          <a href="https://share.google/Yqt1ieoSCb9WSSwn6" target="_blank" rel="noopener noreferrer" class="btn-map-link">
+            <i class="fas fa-external-link-alt"></i> Open in Google Maps
+          </a>
+        </aside>
 
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer id="contact">
-    <div class="container">
-      <div class="footer-main-grid">
-        
-        <!-- Col 1: Brand -->
-        <div class="footer-col footer-brand-wrap">
-          <img src="siddhi asset/siddhi-farm-logo.png" alt="Siddhi Organics" />
-          <p data-i18n="footer_about_text">At Siddhi Organics, we're committed to restoring soil biodiversity, enhancing crop vitality, and helping sustainable agriculture thrive across Maharashtra.</p>
-          <div class="footer-social-icons">
-            <a href="https://facebook.com/siddhi_organics_21" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com/siddhi_organics_21" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/918055227005" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          </div>
+  <div id="site-footer"></div>
 
-          <!-- Quick Footer Language Selector -->
-          <div class="footer-lang-box">
-            <select id="footerLangSelect" class="footer-lang-select" onchange="applyLanguage(this.value)">
-              <option value="en">🌐 English</option>
-              <option value="mr">🌐 मराठी (Marathi)</option>
-              <option value="hi">🌐 हिंदी (Hindi)</option>
-              <option value="gu">🌐 ગુજરાતી (Gujarati)</option>
-            </select>
-          </div>
-        </div>
+  <!-- Load the shared header and footer -->
+  <script>
+    async function loadComponent(targetId, file) {
+      const target = document.getElementById(targetId);
+      const response = await fetch(file);
+      if (!response.ok) throw new Error(`Unable to load ${file}: ${response.status}`);
+      target.innerHTML = await response.text();
 
-        <!-- Col 2: About Links -->
-        <div class="footer-col">
-          <h4 data-i18n="footer_heading_about">About</h4>
-          <ul class="footer-nav-list">
-            <li><a href="index.html#home" data-i18n="footer_link_story">Our Story</a></li>
-            <li><a href="index.html#benefits" data-i18n="footer_link_facility">Farm Facility</a></li>
-            <li><a href="index.html#benefits" data-i18n="footer_link_quality">Quality Standards</a></li>
-            <li><a href="index.html#transformation" data-i18n="footer_link_trans">Transformation</a></li>
-          </ul>
-        </div>
+      target.querySelectorAll('script').forEach(oldScript => {
+        const script = document.createElement('script');
+        [...oldScript.attributes].forEach(attr => script.setAttribute(attr.name, attr.value));
+        script.textContent = oldScript.textContent;
+        oldScript.replaceWith(script);
+      });
+    }
 
-        <!-- Col 3: Benefits Links -->
-        <div class="footer-col">
-          <h4 data-i18n="footer_heading_benefits">Benefits</h4>
-          <ul class="footer-nav-list">
-            <li><a href="products.html" data-i18n="footer_link_farmers">For Crop Farmers</a></li>
-            <li><a href="products.html" data-i18n="footer_link_gardeners">For Home Gardeners</a></li>
-            <li><a href="products.html" data-i18n="footer_link_nurseries">For Plant Nurseries</a></li>
-            <li><a href="products.html" data-i18n="footer_link_bulk">Bulk Commercial Supply</a></li>
-          </ul>
-        </div>
+    window.componentsReady = Promise.all([
+      loadComponent('site-header', 'header.html'),
+      loadComponent('site-footer', 'footer.html')
+    ]).then(() => {
+      const brand = document.querySelector('#site-header .brand-group');
+      if (brand) brand.onclick = () => { window.location.href = 'index.html'; };
 
-        <!-- Col 4: Contact Info -->
-        <div class="footer-col">
-          <h4 data-i18n="footer_heading_contact">Contact Info</h4>
-          <ul class="footer-contact-list">
-            <li>
-              <i class="fas fa-phone"></i>
-              <span><a href="tel:8055227005">+91 80552 27005</a></span>
-            </li>
-            <li>
-              <i class="fas fa-envelope"></i>
-              <span><a href="mailto:contact@siddhiorganics.com">contact@siddhiorganics.com</a></span>
-            </li>
-            <li>
-              <i class="fas fa-location-dot"></i>
-              <span data-i18n="footer_address">Wavadade, Tal. & Dist. Jalgaon, Maharashtra</span>
-            </li>
-          </ul>
-        </div>
+      const sharedNavLinks = document.querySelectorAll('#site-header .nav-menu a');
+      const sectionLinks = {
+        nav_home: 'index.html#home',
+        nav_benefits: 'index.html#benefits',
+        nav_transformation: 'index.html#transformation'
+      };
+      sharedNavLinks.forEach(link => {
+        const key = link.dataset.i18n;
+        if (sectionLinks[key]) {
+          link.removeAttribute('onclick');
+          link.href = sectionLinks[key];
+        }
+        if (key === 'nav_products') link.setAttribute('aria-current', 'page');
+      });
 
-        <!-- Col 5: Newsletter -->
-        <div class="footer-col newsletter-box">
-          <h4 data-i18n="footer_heading_newsletter">Newsletter Subscription</h4>
-          <p data-i18n="footer_newsletter_desc">Join our grower community to receive seasonal crop dosage charts and harvest updates.</p>
-          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to Siddhi Organics updates!');">
-            <input type="email" data-i18n-placeholder="footer_input_placeholder" placeholder="Email Address" class="newsletter-input" required />
-            <button type="submit" class="btn-subscribe">
-              <span data-i18n="footer_btn_subscribe">Subscribe</span> <i class="fas fa-arrow-up-right-from-square"></i>
-            </button>
-          </form>
-        </div>
-
-      </div>
-
-      <!-- Bottom Bar -->
-      <div class="footer-bottom-bar">
-        <div data-i18n="footer_copyright">&copy; 2026 Siddhi Organics. All Rights Reserved.</div>
-        <div class="footer-bottom-links">
-          <a href="#" data-i18n="footer_link_privacy">Privacy Policy</a>
-          <a href="#" data-i18n="footer_link_terms">Terms of Service</a>
-          <a href="#" data-i18n="footer_link_shipping">Shipping & Returns</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Include Multi-Language Script -->
-  <script src="lang.js"></script>
+      return new Promise((resolve, reject) => {
+      const languageScript = document.createElement('script');
+      languageScript.src = 'lang.js';
+      languageScript.onload = resolve;
+      languageScript.onerror = reject;
+      document.body.appendChild(languageScript);
+      });
+    }).catch(error => console.error('Component loading failed:', error));
+  </script>
 
   <!-- Catalog Database & Interactive Script -->
   <script>
@@ -1652,41 +1268,5 @@
     });
   </script>
 
-  <!-- Enhanced Mobile Menu Toggle Script -->
-  <script>
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    const navMenu = document.getElementById('navMenu');
-
-    mobileBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      navMenu.classList.toggle('open');
-      const icon = mobileBtn.querySelector('i');
-      if (navMenu.classList.contains('open')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-xmark');
-      } else {
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
-      }
-    });
-
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        const icon = mobileBtn.querySelector('i');
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
-      });
-    });
-
-    document.addEventListener('click', (event) => {
-      if (navMenu.classList.contains('open') && !navMenu.contains(event.target) && !mobileBtn.contains(event.target)) {
-        navMenu.classList.remove('open');
-        const icon = mobileBtn.querySelector('i');
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
-      }
-    });
-  </script>
 </body>
 </html>

@@ -967,6 +967,207 @@ const detailedProductsI18n = {
   }
 };
 
+/* About, Contact and Map page translations */
+Object.assign(translations.en, {
+  about_title: "About Siddhi Organics",
+  about_subtitle: "Rooted in science and sustainable farming, dedicated to restoring soil health and empowering cultivators directly from our farm in Jalgaon.",
+  about_story_title: "Rooted in Jalgaon: Our Story",
+  about_story_p1: "Siddhi Organics was born from a passion for sustainable farming and a commitment to restoring soil naturally. From our farm in Wavadade, Jalgaon, we saw how chemical-heavy agriculture depleted organic carbon and soil vitality. We believe lasting crop health begins by returning to nature.",
+  about_story_p2: "Led by Managing Director Sahebrao Laxman Phuse (Bari) and Founder and Agricultural Technologist Mayur Sahebrao Phuse (Bari), Siddhi Organics manages every stage of bio-conversion to provide pure organic soil solutions across Maharashtra.",
+  about_leadership_title: "Leadership & Management",
+  about_role_md: "Managing Director",
+  about_md_edu: "Farm Operations & Management",
+  about_role_founder: "Founder",
+  about_founder_edu: "B.Sc. Agriculture",
+  about_whatsapp: "WhatsApp",
+
+  map_title: "Find Us on Map",
+  map_description: "Visit our exact farm facility location via Google Maps.",
+  map_open: "Open in Google Maps",
+
+  contact_title: "Get In Touch",
+  contact_subtitle: "Connect with our farm directors in Jalgaon for retail, wholesale, or bulk agricultural orders.",
+  contact_address_title: "Farm Facility Address",
+  contact_phone_title: "Direct Line & WhatsApp",
+  contact_form_title: "Send Us a Message",
+  contact_form_desc: "Fill out the form below to reach the Siddhi Organics team.",
+  contact_success: "Thank you! Your message has been sent successfully to the Siddhi Organics team.",
+  contact_name_label: "Full Name *",
+  contact_name_placeholder: "Enter your name",
+  contact_phone_label: "Phone Number / WhatsApp *",
+  contact_phone_placeholder: "Enter mobile number",
+  contact_product_label: "Product Requirement",
+  contact_product_vermicompost: "Vermicompost (Bags / Bulk)",
+  contact_product_vermiwash: "Vermiwash (Liquid Tonic)",
+  contact_product_culture: "Vermi Culture (Live Worms)",
+  contact_product_soil: "Potting Soil Mix",
+  contact_product_nimboli: "Nimboli Powder",
+  contact_product_other: "General Partnership / Other",
+  contact_message_label: "Message / Quantity *",
+  contact_message_placeholder: "Mention required quantity...",
+  contact_submit: "Send Message",
+  contact_submitting: "Submitting...",
+  contact_error: "Submission failed. Please try again later."
+});
+
+Object.assign(translations.mr, {
+  about_title: "सिद्धी ऑरगॅनिक्स विषयी",
+  about_subtitle: "विज्ञान आणि शाश्वत शेतीवर आधारित, जळगावमधील आमच्या शेतातून मातीचे आरोग्य सुधारण्यासाठी आणि शेतकऱ्यांना सक्षम करण्यासाठी समर्पित.",
+  about_story_title: "जळगावच्या मातीत रुजलेली आमची कहाणी",
+  about_story_p1: "शाश्वत शेतीची आवड आणि मातीचे नैसर्गिक आरोग्य पुनर्स्थापित करण्याच्या उद्देशातून सिद्धी ऑरगॅनिक्सची स्थापना झाली. वावडदे, जळगाव येथील आमच्या शेतावर रासायनिक शेतीमुळे मातीतील सेंद्रिय कर्ब आणि सुपीकता कमी होत असल्याचे आम्ही अनुभवले.",
+  about_story_p2: "व्यवस्थापकीय संचालक साहेबराव लक्ष्मण फुसे (बारी) आणि संस्थापक व कृषी तंत्रज्ञ मयूर साहेबराव फुसे (बारी) यांच्या नेतृत्वाखाली आम्ही शुद्ध सेंद्रिय माती उपाय तयार करतो.",
+  about_leadership_title: "नेतृत्व आणि व्यवस्थापन",
+  about_role_md: "व्यवस्थापकीय संचालक",
+  about_md_edu: "शेती संचालन आणि व्यवस्थापन",
+  about_role_founder: "संस्थापक",
+  about_founder_edu: "बी.एस्सी. कृषी",
+  about_whatsapp: "व्हॉट्सॲप",
+
+  map_title: "नकाशावर आम्हाला शोधा",
+  map_description: "Google Maps वर आमच्या शेताचे अचूक स्थान पहा.",
+  map_open: "Google Maps मध्ये उघडा",
+
+  contact_title: "आमच्याशी संपर्क साधा",
+  contact_subtitle: "किरकोळ, घाऊक किंवा मोठ्या कृषी ऑर्डरसाठी जळगावमधील आमच्या संचालकांशी संपर्क साधा.",
+  contact_address_title: "शेताचा पत्ता",
+  contact_phone_title: "फोन आणि व्हॉट्सॲप",
+  contact_form_title: "आम्हाला संदेश पाठवा",
+  contact_form_desc: "सिद्धी ऑरगॅनिक्स टीमशी संपर्क साधण्यासाठी खालील फॉर्म भरा.",
+  contact_success: "धन्यवाद! तुमचा संदेश सिद्धी ऑरगॅनिक्स टीमला यशस्वीरीत्या पाठवण्यात आला.",
+  contact_name_label: "पूर्ण नाव *",
+  contact_name_placeholder: "तुमचे नाव लिहा",
+  contact_phone_label: "फोन नंबर / व्हॉट्सॲप *",
+  contact_phone_placeholder: "मोबाईल नंबर लिहा",
+  contact_product_label: "आवश्यक उत्पादन",
+  contact_product_vermicompost: "गांडूळ खत (पिशव्या / घाऊक)",
+  contact_product_vermiwash: "व्हर्मीवॉश (द्रव टॉनिक)",
+  contact_product_culture: "गांडूळ कल्चर (जिवंत गांडुळे)",
+  contact_product_soil: "पॉटिंग सॉइल मिक्स",
+  contact_product_nimboli: "निंबोळी पावडर",
+  contact_product_other: "सामान्य भागीदारी / इतर",
+  contact_message_label: "संदेश / आवश्यक प्रमाण *",
+  contact_message_placeholder: "आवश्यक प्रमाण लिहा...",
+  contact_submit: "संदेश पाठवा",
+  contact_submitting: "पाठवत आहे...",
+  contact_error: "संदेश पाठवता आला नाही. कृपया पुन्हा प्रयत्न करा."
+});
+
+Object.assign(translations.hi, {
+  about_title: "सिद्धि ऑर्गेनिक्स के बारे में",
+  about_subtitle: "विज्ञान और टिकाऊ खेती पर आधारित, जलगांव स्थित अपने खेत से मिट्टी के स्वास्थ्य को बेहतर बनाने और किसानों को सशक्त करने के लिए समर्पित।",
+  about_story_title: "जलगांव की मिट्टी से जुड़ी हमारी कहानी",
+  about_story_p1: "टिकाऊ खेती के प्रति लगाव और मिट्टी के प्राकृतिक स्वास्थ्य को पुनर्स्थापित करने के उद्देश्य से सिद्धि ऑर्गेनिक्स की शुरुआत हुई। वावडदे, जलगांव स्थित अपने खेत में हमने रासायनिक खेती के कारण मिट्टी की उर्वरता और जैविक कार्बन में कमी देखी।",
+  about_story_p2: "प्रबंध निदेशक साहेबराव लक्ष्मण फुसे (बारी) और संस्थापक एवं कृषि तकनीकी विशेषज्ञ मयूर साहेबराव फुसे (बारी) के नेतृत्व में हम शुद्ध जैविक मिट्टी समाधान तैयार करते हैं।",
+  about_leadership_title: "नेतृत्व एवं प्रबंधन",
+  about_role_md: "प्रबंध निदेशक",
+  about_md_edu: "कृषि संचालन एवं प्रबंधन",
+  about_role_founder: "संस्थापक",
+  about_founder_edu: "बी.एससी. कृषि",
+  about_whatsapp: "व्हॉट्सऐप",
+
+  map_title: "मानचित्र पर हमें खोजें",
+  map_description: "Google Maps पर हमारे खेत का सटीक स्थान देखें।",
+  map_open: "Google Maps में खोलें",
+
+  contact_title: "हमसे संपर्क करें",
+  contact_subtitle: "खुदरा, थोक या बड़ी कृषि ऑर्डर के लिए जलगांव स्थित हमारे निदेशकों से संपर्क करें।",
+  contact_address_title: "फार्म का पता",
+  contact_phone_title: "फोन और व्हॉट्सऐप",
+  contact_form_title: "हमें संदेश भेजें",
+  contact_form_desc: "सिद्धि ऑर्गेनिक्स टीम से संपर्क करने के लिए नीचे दिया गया फॉर्म भरें।",
+  contact_success: "धन्यवाद! आपका संदेश सिद्धि ऑर्गेनिक्स टीम को सफलतापूर्वक भेज दिया गया है।",
+  contact_name_label: "पूरा नाम *",
+  contact_name_placeholder: "अपना नाम दर्ज करें",
+  contact_phone_label: "फोन नंबर / व्हॉट्सऐप *",
+  contact_phone_placeholder: "मोबाइल नंबर दर्ज करें",
+  contact_product_label: "आवश्यक उत्पाद",
+  contact_product_vermicompost: "वर्मीकम्पोस्ट (बैग / थोक)",
+  contact_product_vermiwash: "वर्मीवॉश (तरल टॉनिक)",
+  contact_product_culture: "वर्मी कल्चर (जीवित केंचुए)",
+  contact_product_soil: "पॉटिंग सॉइल मिक्स",
+  contact_product_nimboli: "निंबोली पाउडर",
+  contact_product_other: "सामान्य साझेदारी / अन्य",
+  contact_message_label: "संदेश / आवश्यक मात्रा *",
+  contact_message_placeholder: "आवश्यक मात्रा लिखें...",
+  contact_submit: "संदेश भेजें",
+  contact_submitting: "भेजा जा रहा है...",
+  contact_error: "संदेश भेजना विफल रहा। कृपया दोबारा प्रयास करें।"
+});
+
+Object.assign(translations.gu, {
+  about_title: "સિદ્ધિ ઓર્ગેનિક્સ વિશે",
+  about_subtitle: "વિજ્ઞાન અને ટકાઉ ખેતી પર આધારિત, જળગાંવના અમારા ફાર્મમાંથી જમીનનું સ્વાસ્થ્ય સુધારવા અને ખેડૂતોને સશક્ત બનાવવા માટે સમર્પિત.",
+  about_story_title: "જળગાંવની જમીન સાથે જોડાયેલી અમારી કહાની",
+  about_story_p1: "ટકાઉ ખેતી પ્રત્યેના લગાવ અને જમીનનું કુદરતી સ્વાસ્થ્ય પુનઃસ્થાપિત કરવાના ઉદ્દેશથી સિદ્ધિ ઓર્ગેનિક્સની શરૂઆત થઈ. વાવડદે, જળગાંવના અમારા ફાર્મમાં રાસાયણિક ખેતીના કારણે જમીનની ફળદ્રુપતા ઘટતી હોવાનું અમે જોયું.",
+  about_story_p2: "મેનેજિંગ ડિરેક્ટર સાહેબરાવ લક્ષ્મણ ફુસે (બારી) અને સ્થાપક તથા કૃષિ ટેક્નોલોજિસ્ટ મયુર સાહેબરાવ ફુસે (બારી)ના નેતૃત્વ હેઠળ અમે શુદ્ધ ઓર્ગેનિક જમીન ઉકેલો તૈયાર કરીએ છીએ.",
+  about_leadership_title: "નેતૃત્વ અને વ્યવસ્થાપન",
+  about_role_md: "મેનેજિંગ ડિરેક્ટર",
+  about_md_edu: "ખેતી સંચાલન અને વ્યવસ્થાપન",
+  about_role_founder: "સ્થાપક",
+  about_founder_edu: "બી.એસસી. કૃષિ",
+  about_whatsapp: "વોટ્સએપ",
+
+  map_title: "નકશા પર અમને શોધો",
+  map_description: "Google Maps પર અમારા ફાર્મનું ચોક્કસ સ્થાન જુઓ.",
+  map_open: "Google Mapsમાં ખોલો",
+
+  contact_title: "અમારો સંપર્ક કરો",
+  contact_subtitle: "રિટેલ, હોલસેલ અથવા મોટા કૃષિ ઓર્ડર માટે જળગાંવના અમારા ડિરેક્ટરોનો સંપર્ક કરો.",
+  contact_address_title: "ફાર્મનું સરનામું",
+  contact_phone_title: "ફોન અને વોટ્સએપ",
+  contact_form_title: "અમને સંદેશ મોકલો",
+  contact_form_desc: "સિદ્ધિ ઓર્ગેનિક્સ ટીમનો સંપર્ક કરવા માટે નીચેનું ફોર્મ ભરો.",
+  contact_success: "આભાર! તમારો સંદેશ સિદ્ધિ ઓર્ગેનિક્સ ટીમને સફળતાપૂર્વક મોકલવામાં આવ્યો છે.",
+  contact_name_label: "પૂરું નામ *",
+  contact_name_placeholder: "તમારું નામ દાખલ કરો",
+  contact_phone_label: "ફોન નંબર / વોટ્સએપ *",
+  contact_phone_placeholder: "મોબાઇલ નંબર દાખલ કરો",
+  contact_product_label: "જરૂરી ઉત્પાદન",
+  contact_product_vermicompost: "વર્મીકમ્પોસ્ટ (બેગ / હોલસેલ)",
+  contact_product_vermiwash: "વર્મીવોશ (પ્રવાહી ટોનિક)",
+  contact_product_culture: "વર્મી કલ્ચર (જીવંત અળસિયા)",
+  contact_product_soil: "પોટિંગ સોઇલ મિક્સ",
+  contact_product_nimboli: "લીંબોળી પાવડર",
+  contact_product_other: "સામાન્ય ભાગીદારી / અન્ય",
+  contact_message_label: "સંદેશ / જરૂરી માત્રા *",
+  contact_message_placeholder: "જરૂરી માત્રા લખો...",
+  contact_submit: "સંદેશ મોકલો",
+  contact_submitting: "મોકલવામાં આવી રહ્યું છે...",
+  contact_error: "સંદેશ મોકલી શકાયો નથી. કૃપા કરીને ફરી પ્રયાસ કરો."
+});
+
+
+Object.assign(translations.en, {
+  nav_location: "Location",
+  footer_connect_title: "Direct Connect",
+  footer_connect_desc: "Speak directly with our team for product enquiries, pricing, and bulk orders.",
+  footer_call_label: "Call Sahebrao",
+  footer_whatsapp_label: "WhatsApp Mayur"
+});
+
+Object.assign(translations.mr, {
+  nav_location: "ठिकाण",
+  footer_connect_title: "थेट संपर्क",
+  footer_connect_desc: "उत्पादन चौकशी, किंमत आणि मोठ्या ऑर्डरसाठी आमच्या टीमशी थेट संपर्क साधा.",
+  footer_call_label: "साहेबराव यांना कॉल करा",
+  footer_whatsapp_label: "मयूर यांना व्हॉट्सॲप करा"
+});
+
+Object.assign(translations.hi, {
+  nav_location: "स्थान",
+  footer_connect_title: "सीधा संपर्क",
+  footer_connect_desc: "उत्पाद पूछताछ, कीमत और बड़ी ऑर्डर के लिए हमारी टीम से सीधे संपर्क करें।",
+  footer_call_label: "साहेबराव को कॉल करें",
+  footer_whatsapp_label: "मयूर को व्हॉट्सऐप करें"
+});
+
+Object.assign(translations.gu, {
+  nav_location: "સ્થાન",
+  footer_connect_title: "સીધો સંપર્ક",
+  footer_connect_desc: "ઉત્પાદન પૂછપરછ, કિંમત અને મોટા ઓર્ડર માટે અમારી ટીમનો સીધો સંપર્ક કરો.",
+  footer_call_label: "સાહેબરાવને કૉલ કરો",
+  footer_whatsapp_label: "મયુરને વોટ્સએપ કરો"
+});
 function setCookie(name, value, days) {
   let expires = "";
   if (days) {
