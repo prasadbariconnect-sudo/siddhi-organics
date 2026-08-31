@@ -1,6 +1,6 @@
 /**
  * Siddhi Organics - Complete Multi-Language Engine & Cookie Storage
- * Includes Homepage, Catalog, and Full Product Detail View Translations
+ * Includes Homepage, Catalog, Full Product Detail View, and Invisible Admin Gesture
  */
 
 const translations = {
@@ -983,7 +983,7 @@ Object.assign(translations.en, {
   about_founder_edu: "B.Sc. Agriculture",
   about_founder_exp: "5+ Years Experience in Vermicomposting & Organic Formulations",
   about_whatsapp: "Chat on WhatsApp",
-  about_founder_wa_msg: "Hi Mayur, I want to discuss about Siddhi Organics products and many more.",
+  about_founder_wa_msg: "hi mayur i want to descuss about siddhi organic products and many more",
 
   map_title: "Find Us on Map",
   map_description: "Visit our exact farm facility location via Google Maps.",
@@ -1267,3 +1267,113 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modal) modal.style.display = 'flex';
   }
 });
+
+/* ========================================================================== */
+/* INVISIBLE GESTURE ENGINE: DRAW "M" OR "m" TO REDIRECT TO ADMIN              */
+/* ========================================================================== */
+(function () {
+  let points = [];
+  let isTracking = false;
+
+  function startStroke(x, y) {
+    points = [{ x, y }];
+    isTracking = true;
+  }
+
+  function moveStroke(x, y) {
+    if (!isTracking) return;
+    const lastPoint = points[points.length - 1];
+    const dist = Math.hypot(x - lastPoint.x, y - lastPoint.y);
+    if (dist > 10) {
+      points.push({ x, y });
+    }
+  }
+
+  function endStroke() {
+    if (!isTracking) return;
+    isTracking = false;
+
+    if (points.length < 8) return;
+
+    // Check gesture bounding box size (at least 35px wide and tall)
+    const xs = points.map(p => p.x);
+    const ys = points.map(p => p.y);
+    const width = Math.max(...xs) - Math.min(...xs);
+    const height = Math.max(...ys) - Math.min(...ys);
+    if (width < 35 || height < 35) return;
+
+    // Convert to directional movements
+    const directions = [];
+    for (let i = 1; i < points.length; i++) {
+      const dx = points[i].x - points[i - 1].x;
+      const dy = points[i].y - points[i - 1].y;
+
+      let dir = "";
+      if (dy < -Math.abs(dx) * 0.4) dir += "U";
+      else if (dy > Math.abs(dx) * 0.4) dir += "D";
+
+      if (dx > Math.abs(dy) * 0.4) dir += "R";
+      else if (dx < -Math.abs(dy) * 0.4) dir += "L";
+
+      if (dir && directions[directions.length - 1] !== dir) {
+        directions.push(dir);
+      }
+    }
+
+    // Collapse path into main directional transitions
+    const collapsed = [];
+    directions.forEach(d => {
+      let mainDir = "";
+      if (d.includes("U") && d.includes("R")) mainDir = "UR";
+      else if (d.includes("D") && d.includes("R")) mainDir = "DR";
+      else if (d.includes("U")) mainDir = "U";
+      else if (d.includes("D")) mainDir = "D";
+
+      if (mainDir && collapsed[collapsed.length - 1] !== mainDir) {
+        collapsed.push(mainDir);
+      }
+    });
+
+    const pattern = collapsed.join("-");
+
+    // Match 1: Uppercase "M" (Up -> Down-Right -> Up-Right -> Down)
+    const isUppercaseM = /U.*DR.*UR.*D/.test(pattern) || (pattern.includes("U") && pattern.includes("DR") && pattern.includes("UR") && pattern.includes("D"));
+
+    // Match 2: Lowercase "m" with arches (Down/Up -> Arch 1 Down -> Arch 2 Down)
+    const downCount = (pattern.match(/D|DR/g) || []).length;
+    const upCount = (pattern.match(/U|UR/g) || []).length;
+    const isLowercaseM = (downCount >= 3 && upCount >= 2);
+
+    if (isUppercaseM || isLowercaseM) {
+      window.location.href = "admin.html";
+    }
+  }
+
+  // Touch Support
+  window.addEventListener("touchstart", e => {
+    if (e.touches.length === 1) {
+      startStroke(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  }, { passive: true });
+
+  window.addEventListener("touchmove", e => {
+    if (e.touches.length === 1) {
+      moveStroke(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  }, { passive: true });
+
+  window.addEventListener("touchend", endStroke);
+
+  // Mouse Support
+  window.addEventListener("mousedown", e => {
+    if (e.button === 0) {
+      startStroke(e.clientX, e.clientY);
+    }
+  });
+
+  window.addEventListener("mousemove", e => {
+    moveStroke(e.clientX, e.clientY);
+  });
+
+  window.addEventListener("mouseup", endStroke);
+})();
