@@ -71,9 +71,106 @@
       padding: 20px 0 80px;
     }
 
+    /* ---------------- Dynamic Top Banner Section (1284x474 Ratio) ---------------- */
+    .top-dynamic-banner-section {
+      padding: 25px 0 0;
+    }
+
+    .top-banner-card {
+      max-width: 1284px;
+      margin: 0 auto;
+      width: 100%;
+      aspect-ratio: 1284 / 474;
+      max-height: 474px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 2px solid var(--card-border);
+      box-shadow: 0 16px 36px rgba(20, 41, 23, 0.15);
+      position: relative;
+      background: #eaf3e6;
+    }
+
+    .top-banner-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .top-banner-slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .top-banner-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .top-banner-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--brand-green-dark);
+      border: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 5;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      backdrop-filter: blur(4px);
+    }
+
+    .top-banner-nav-btn:hover {
+      background: var(--brand-green-dark);
+      color: #fff;
+    }
+
+    .top-banner-prev {
+      left: 14px;
+    }
+
+    .top-banner-next {
+      right: 14px;
+    }
+
+    .top-banner-dots {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      display: flex;
+      gap: 6px;
+      z-index: 5;
+    }
+
+    .top-banner-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .top-banner-dot.active {
+      width: 24px;
+      border-radius: 12px;
+      background: var(--cta-lime);
+    }
+
     /* ---------------- Hero Section ---------------- */
     .hero-banner-section {
-      padding: 50px 0 35px;
+      padding: 40px 0 35px;
     }
 
     .hero-card-surface {
@@ -1293,6 +1390,22 @@
 
   <!-- ==================== VIEW 1: HOMEPAGE ==================== -->
   <main id="homepageView">
+
+    <!-- Top Dynamic Banner Section Above Hero (1284x474 Ratio) -->
+    <section class="top-dynamic-banner-section">
+      <div class="container">
+        <div class="top-banner-card" id="topBannerCard" style="display: none;">
+          <div class="top-banner-track" id="topBannerTrack"></div>
+          <button class="top-banner-nav-btn top-banner-prev" id="topBannerPrev" aria-label="Previous Slide">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="top-banner-nav-btn top-banner-next" id="topBannerNext" aria-label="Next Slide">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="top-banner-dots" id="topBannerDots"></div>
+        </div>
+      </div>
+    </section>
     
     <!-- Hero Section -->
     <section class="hero-banner-section" id="home">
@@ -1694,6 +1807,126 @@
 
   <!-- Interactive Scripts -->
   <script>
+    // Fetch and apply dynamic Top Banner (1284x474) content from Google Sheet on load
+    document.addEventListener("DOMContentLoaded", () => {
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzTDGliLGt7gZETmdrtD51xtpAQGLRIkuVk1VI9Z_kdhl8R9k4NI592VPySCGY1QpUNug/exec';
+	  
+      
+      fetch(`${scriptURL}?action=getSettings`)
+        .then(res => res.json())
+        .then(settings => {
+          const imgObj = settings.find(s => s.section === 'HeroCarousel' && (s.key === 'imageUrls' || s.key === 'imageUrl'));
+
+          if (imgObj && imgObj.value) {
+            const urls = imgObj.value.split(',').map(u => u.trim()).filter(u => u.length > 0);
+            const bannerCard = document.getElementById('topBannerCard');
+            const bannerTrack = document.getElementById('topBannerTrack');
+            const dotsContainer = document.getElementById('topBannerDots');
+            const prevBtn = document.getElementById('topBannerPrev');
+            const nextBtn = document.getElementById('topBannerNext');
+
+            if (urls.length > 0 && bannerCard && bannerTrack) {
+              bannerCard.style.display = 'block';
+              
+              bannerTrack.innerHTML = urls.map((url, index) => `
+                <div class="top-banner-slide">
+                  <img src="${url}" alt="Siddhi Organics Banner ${index + 1}" style="width:100%; height:100%; object-fit:cover; aspect-ratio: 1284 / 474;" onerror="this.src='https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1284&q=80'" />
+                </div>
+              `).join('');
+
+              if (dotsContainer) {
+                dotsContainer.innerHTML = urls.map((_, index) => `
+                  <span class="top-banner-dot ${index === 0 ? 'active' : ''}" onclick="goToTopBannerSlide(${index})"></span>
+                `).join('');
+              }
+
+              if (urls.length <= 1) {
+                if (prevBtn) prevBtn.style.display = 'none';
+                if (nextBtn) nextBtn.style.display = 'none';
+                if (dotsContainer) dotsContainer.style.display = 'none';
+              } else {
+                if (prevBtn) prevBtn.style.display = 'flex';
+                if (nextBtn) nextBtn.style.display = 'flex';
+                if (dotsContainer) dotsContainer.style.display = 'flex';
+                topBannerTotal = urls.length;
+                startTopBannerInterval();
+              }
+            }
+          }
+        })
+        .catch(err => console.log("Using default local settings:", err));
+    });
+
+    // Top Dynamic Banner Carousel Engine
+    const topBannerTrack = document.getElementById('topBannerTrack');
+    let topBannerDots = document.querySelectorAll('.top-banner-dot');
+    const topBannerPrev = document.getElementById('topBannerPrev');
+    const topBannerNext = document.getElementById('topBannerNext');
+    let topBannerCurrent = 0;
+    let topBannerTotal = document.querySelectorAll('.top-banner-slide').length;
+    let topBannerInterval = null;
+
+    function updateTopBanner() {
+      topBannerDots = document.querySelectorAll('.top-banner-dot');
+      if (topBannerTrack && topBannerTotal > 0) {
+        topBannerTrack.style.transform = `translateX(-${topBannerCurrent * 100}%)`;
+      }
+      topBannerDots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === topBannerCurrent);
+      });
+    }
+
+    function nextTopBannerSlide() {
+      if (topBannerTotal <= 1) return;
+      topBannerCurrent = (topBannerCurrent + 1) % topBannerTotal;
+      updateTopBanner();
+    }
+
+    function prevTopBannerSlide() {
+      if (topBannerTotal <= 1) return;
+      topBannerCurrent = (topBannerCurrent - 1 + topBannerTotal) % topBannerTotal;
+      updateTopBanner();
+    }
+
+    function goToTopBannerSlide(index) {
+      if (topBannerTotal <= 1) return;
+      topBannerCurrent = index;
+      updateTopBanner();
+      resetTopBannerInterval();
+    }
+
+    function startTopBannerInterval() {
+      if (topBannerTotal <= 1) return;
+      clearInterval(topBannerInterval);
+      topBannerInterval = setInterval(nextTopBannerSlide, 3500);
+    }
+
+    function resetTopBannerInterval() {
+      if (topBannerTotal <= 1) return;
+      clearInterval(topBannerInterval);
+      startTopBannerInterval();
+    }
+
+    if (topBannerNext && topBannerPrev) {
+      topBannerNext.addEventListener('click', () => {
+        nextTopBannerSlide();
+        resetTopBannerInterval();
+      });
+
+      topBannerPrev.addEventListener('click', () => {
+        prevTopBannerSlide();
+        resetTopBannerInterval();
+      });
+    }
+
+    const topBannerCardEl = document.getElementById('topBannerCard');
+    if (topBannerCardEl) {
+      topBannerCardEl.addEventListener('mouseenter', () => clearInterval(topBannerInterval));
+      topBannerCardEl.addEventListener('mouseleave', () => startTopBannerInterval());
+    }
+
+    startTopBannerInterval();
+
     // Hero Automatic Carousel Engine
     const heroTrack = document.getElementById('heroTrack');
     const heroSlides = document.querySelectorAll('.hero-carousel-slide');

@@ -967,11 +967,8 @@ const detailedProductsI18n = {
   }
 };
 
-/* About, Contact and Map page translations */
 /* ========================================================================== */
 /* EDIT ZONE 1: ABOUT, CONTACT AND MAP PAGE TRANSLATIONS                      */
-/* Add or change page-specific text inside the matching language block below. */
-/* Languages: en = English, mr = Marathi, hi = Hindi, gu = Gujarati           */
 /* ========================================================================== */
 
 // ------------------------------ ENGLISH -----------------------------------
@@ -979,13 +976,10 @@ Object.assign(translations.en, {
   about_title: "About Siddhi Organics",
   about_subtitle: "Rooted in science and sustainable farming, dedicated to restoring soil health and empowering cultivators directly from our farm in Jalgaon.",
   about_story_title: "Rooted in Jalgaon: Our Story",
-  about_story_p1: "Siddhi Organics was born from a passion for sustainable farming and a commitment to restoring soil naturally. From our farm in Wavadade, Jalgaon, we saw how chemical-heavy agriculture depleted organic carbon and soil vitality. We believe lasting crop health begins by returning to nature.",
-  about_story_p2: "Led by Managing Director Sahebrao Laxman Phuse (Bari) and Founder and Agricultural Technologist Mayur Sahebrao Phuse (Bari), Siddhi Organics manages every stage of bio-conversion to provide pure organic soil solutions across Maharashtra.",
-  about_leadership_title: "Leadership & Management",
-  about_role_md: "Managing Director",
-  about_md_edu: "Farm Operations & Management",
-  about_role_founder: "Founder",
-  about_founder_edu: "B.Sc. Agriculture",
+  about_story_p1: "Siddhi Organics was founded on a simple mission: to heal the soil and champion sustainable agriculture from the ground up. Operating from our farm facility in Wavadade, Jalgaon, we saw firsthand how chemical-heavy farming was depleting organic carbon and draining soil vitality. We realized that true, long-term soil fertility could only be revived by working hand-in-hand with nature.",
+  about_story_p2: "Guided by the agricultural expertise of Mayur Sahebrao Phuse, we turned to nature’s finest recyclers—earthworms. Today, Siddhi Organics operates as an independent, producer-direct facility. We carefully oversee every stage of the natural bio-conversion process, delivering 100% pure, weed-free organic solutions to farmers, gardeners, and growers across Maharashtra.",
+  about_leadership_title: "Leadership",
+  about_role_founder: "Mayur Sahebrao Phuse",
   about_whatsapp: "WhatsApp",
 
   map_title: "Find Us on Map",
@@ -993,12 +987,12 @@ Object.assign(translations.en, {
   map_open: "Open in Google Maps",
 
   contact_title: "Get In Touch",
-  contact_subtitle: "Connect with our farm directors in Jalgaon for retail, wholesale, or bulk agricultural orders.",
+  contact_subtitle: "Connect with Mayur Sahebrao Phuse in Jalgaon for retail, wholesale, or bulk agricultural orders.",
   contact_address_title: "Farm Facility Address",
   contact_phone_title: "Direct Line & WhatsApp",
   contact_form_title: "Send Us a Message",
-  contact_form_desc: "Fill out the form below to reach the Siddhi Organics team.",
-  contact_success: "Thank you! Your message has been sent successfully to the Siddhi Organics team.",
+  contact_form_desc: "Fill out the form below to reach Mayur Sahebrao Phuse.",
+  contact_success: "Thank you! Your message has been sent successfully to Mayur Sahebrao Phuse.",
   contact_name_label: "Full Name *",
   contact_name_placeholder: "Enter your name",
   contact_phone_label: "Phone Number / WhatsApp *",
@@ -1023,12 +1017,9 @@ Object.assign(translations.mr, {
   about_subtitle: "विज्ञान आणि शाश्वत शेतीवर आधारित, जळगावमधील आमच्या शेतातून मातीचे आरोग्य सुधारण्यासाठी आणि शेतकऱ्यांना सक्षम करण्यासाठी समर्पित.",
   about_story_title: "जळगावच्या मातीत रुजलेली आमची कहाणी",
   about_story_p1: "शाश्वत शेतीची आवड आणि मातीचे नैसर्गिक आरोग्य पुनर्स्थापित करण्याच्या उद्देशातून सिद्धी ऑरगॅनिक्सची स्थापना झाली. वावडदे, जळगाव येथील आमच्या शेतावर रासायनिक शेतीमुळे मातीतील सेंद्रिय कर्ब आणि सुपीकता कमी होत असल्याचे आम्ही अनुभवले.",
-  about_story_p2: "व्यवस्थापकीय संचालक साहेबराव लक्ष्मण फुसे (बारी) आणि संस्थापक व कृषी तंत्रज्ञ मयूर साहेबराव फुसे (बारी) यांच्या नेतृत्वाखाली आम्ही शुद्ध सेंद्रिय माती उपाय तयार करतो.",
-  about_leadership_title: "नेतृत्व आणि व्यवस्थापन",
-  about_role_md: "व्यवस्थापकीय संचालक",
-  about_md_edu: "शेती संचालन आणि व्यवस्थापन",
-  about_role_founder: "संस्थापक",
-  about_founder_edu: "बी.एस्सी. कृषी",
+  about_story_p2: "मयूर साहेबराव फुसे यांच्या नेतृत्वाखाली आम्ही शुद्ध सेंद्रिय माती उपाय तयार करतो.",
+  about_leadership_title: "नेतृत्व",
+  about_role_founder: "मयूर साहेबराव फुसे",
   about_whatsapp: "व्हॉट्सॲप",
 
   map_title: "नकाशावर आम्हाला शोधा",
@@ -1036,12 +1027,12 @@ Object.assign(translations.mr, {
   map_open: "Google Maps मध्ये उघडा",
 
   contact_title: "आमच्याशी संपर्क साधा",
-  contact_subtitle: "किरकोळ, घाऊक किंवा मोठ्या कृषी ऑर्डरसाठी जळगावमधील आमच्या संचालकांशी संपर्क साधा.",
+  contact_subtitle: "किरकोळ, घाऊक किंवा मोठ्या कृषी ऑर्डरसाठी जळगावमध्ये मयूर साहेबराव फुसे यांच्याशी संपर्क साधा.",
   contact_address_title: "शेताचा पत्ता",
   contact_phone_title: "फोन आणि व्हॉट्सॲप",
   contact_form_title: "आम्हाला संदेश पाठवा",
-  contact_form_desc: "सिद्धी ऑरगॅनिक्स टीमशी संपर्क साधण्यासाठी खालील फॉर्म भरा.",
-  contact_success: "धन्यवाद! तुमचा संदेश सिद्धी ऑरगॅनिक्स टीमला यशस्वीरीत्या पाठवण्यात आला.",
+  contact_form_desc: "मयूर साहेबराव फुसे यांच्याशी संपर्क साधण्यासाठी खालील फॉर्म भरा.",
+  contact_success: "धन्यवाद! तुमचा संदेश मयूर साहेबराव फुसे यांच्याकडे यशस्वीरीत्या पाठवण्यात आला.",
   contact_name_label: "पूर्ण नाव *",
   contact_name_placeholder: "तुमचे नाव लिहा",
   contact_phone_label: "फोन नंबर / व्हॉट्सॲप *",
@@ -1066,12 +1057,9 @@ Object.assign(translations.hi, {
   about_subtitle: "विज्ञान और टिकाऊ खेती पर आधारित, जलगांव स्थित अपने खेत से मिट्टी के स्वास्थ्य को बेहतर बनाने और किसानों को सशक्त करने के लिए समर्पित।",
   about_story_title: "जलगांव की मिट्टी से जुड़ी हमारी कहानी",
   about_story_p1: "टिकाऊ खेती के प्रति लगाव और मिट्टी के प्राकृतिक स्वास्थ्य को पुनर्स्थापित करने के उद्देश्य से सिद्धि ऑर्गेनिक्स की शुरुआत हुई। वावडदे, जलगांव स्थित अपने खेत में हमने रासायनिक खेती के कारण मिट्टी की उर्वरता और जैविक कार्बन में कमी देखी।",
-  about_story_p2: "प्रबंध निदेशक साहेबराव लक्ष्मण फुसे (बारी) और संस्थापक एवं कृषि तकनीकी विशेषज्ञ मयूर साहेबराव फुसे (बारी) के नेतृत्व में हम शुद्ध जैविक मिट्टी समाधान तैयार करते हैं।",
-  about_leadership_title: "नेतृत्व एवं प्रबंधन",
-  about_role_md: "प्रबंध निदेशक",
-  about_md_edu: "कृषि संचालन एवं प्रबंधन",
-  about_role_founder: "संस्थापक",
-  about_founder_edu: "बी.एससी. कृषि",
+  about_story_p2: "मयूर साहेबराव फुसे के नेतृत्व में हम शुद्ध जैविक मिट्टी समाधान तैयार करते हैं।",
+  about_leadership_title: "नेतृत्व",
+  about_role_founder: "मयूर साहेबराव फुसे",
   about_whatsapp: "व्हॉट्सऐप",
 
   map_title: "मानचित्र पर हमें खोजें",
@@ -1079,12 +1067,12 @@ Object.assign(translations.hi, {
   map_open: "Google Maps में खोलें",
 
   contact_title: "हमसे संपर्क करें",
-  contact_subtitle: "खुदरा, थोक या बड़ी कृषि ऑर्डर के लिए जलगांव स्थित हमारे निदेशकों से संपर्क करें।",
+  contact_subtitle: "खुदरा, थोक या बड़ी कृषि ऑर्डर के लिए जलगांव में मयूर साहेबराव फुसे से संपर्क करें।",
   contact_address_title: "फार्म का पता",
   contact_phone_title: "फोन और व्हॉट्सऐप",
   contact_form_title: "हमें संदेश भेजें",
-  contact_form_desc: "सिद्धि ऑर्गेनिक्स टीम से संपर्क करने के लिए नीचे दिया गया फॉर्म भरें।",
-  contact_success: "धन्यवाद! आपका संदेश सिद्धि ऑर्गेनिक्स टीम को सफलतापूर्वक भेज दिया गया है।",
+  contact_form_desc: "मयूर साहेबराव फुसे से संपर्क करने के लिए नीचे दिया गया फॉर्म भरें।",
+  contact_success: "धन्यवाद! आपका संदेश मयूर साहेबराव फुसे को सफलतापूर्वक भेज दिया गया है।",
   contact_name_label: "पूरा नाम *",
   contact_name_placeholder: "अपना नाम दर्ज करें",
   contact_phone_label: "फोन नंबर / व्हॉट्सऐप *",
@@ -1109,12 +1097,9 @@ Object.assign(translations.gu, {
   about_subtitle: "વિજ્ઞાન અને ટકાઉ ખેતી પર આધારિત, જળગાંવના અમારા ફાર્મમાંથી જમીનનું સ્વાસ્થ્ય સુધારવા અને ખેડૂતોને સશક્ત બનાવવા માટે સમર્પિત.",
   about_story_title: "જળગાંવની જમીન સાથે જોડાયેલી અમારી કહાની",
   about_story_p1: "ટકાઉ ખેતી પ્રત્યેના લગાવ અને જમીનનું કુદરતી સ્વાસ્થ્ય પુનઃસ્થાપિત કરવાના ઉદ્દેશથી સિદ્ધિ ઓર્ગેનિક્સની શરૂઆત થઈ. વાવડદે, જળગાંવના અમારા ફાર્મમાં રાસાયણિક ખેતીના કારણે જમીનની ફળદ્રુપતા ઘટતી હોવાનું અમે જોયું.",
-  about_story_p2: "મેનેજિંગ ડિરેક્ટર સાહેબરાવ લક્ષ્મણ ફુસે (બારી) અને સ્થાપક તથા કૃષિ ટેક્નોલોજિસ્ટ મયુર સાહેબરાવ ફુસે (બારી)ના નેતૃત્વ હેઠળ અમે શુદ્ધ ઓર્ગેનિક જમીન ઉકેલો તૈયાર કરીએ છીએ.",
-  about_leadership_title: "નેતૃત્વ અને વ્યવસ્થાપન",
-  about_role_md: "મેનેજિંગ ડિરેક્ટર",
-  about_md_edu: "ખેતી સંચાલન અને વ્યવસ્થાપન",
-  about_role_founder: "સ્થાપક",
-  about_founder_edu: "બી.એસસી. કૃષિ",
+  about_story_p2: "મયુર સાહેબરાવ ફુસેના નેતૃત્વ હેઠળ અમે શુદ્ધ ઓર્ગેનિક જમીન ઉકેલો તૈયાર કરીએ છીએ.",
+  about_leadership_title: "નેતૃત્વ",
+  about_role_founder: "મયુર સાહેબરાવ ફુસે",
   about_whatsapp: "વોટ્સએપ",
 
   map_title: "નકશા પર અમને શોધો",
@@ -1122,12 +1107,12 @@ Object.assign(translations.gu, {
   map_open: "Google Mapsમાં ખોલો",
 
   contact_title: "અમારો સંપર્ક કરો",
-  contact_subtitle: "રિટેલ, હોલસેલ અથવા મોટા કૃષિ ઓર્ડર માટે જળગાંવના અમારા ડિરેક્ટરોનો સંપર્ક કરો.",
+  contact_subtitle: "રિટેલ, હોલસેલ અથવા મોટા કૃષિ ઓર્ડર માટે જળગાંવમાં મયુર સાહેબરાવ ફુસેનો સંપર્ક કરો.",
   contact_address_title: "ફાર્મનું સરનામું",
   contact_phone_title: "ફોન અને વોટ્સએપ",
   contact_form_title: "અમને સંદેશ મોકલો",
-  contact_form_desc: "સિદ્ધિ ઓર્ગેનિક્સ ટીમનો સંપર્ક કરવા માટે નીચેનું ફોર્મ ભરો.",
-  contact_success: "આભાર! તમારો સંદેશ સિદ્ધિ ઓર્ગેનિક્સ ટીમને સફળતાપૂર્વક મોકલવામાં આવ્યો છે.",
+  contact_form_desc: "મયુર સાહેબરાવ ફુસેનો સંપર્ક કરવા માટે નીચેનું ફોર્મ ભરો.",
+  contact_success: "આભાર! તમારો સંદેશ મયુર સાહેબરાવ ફુસેને સફળતાપૂર્વક મોકલવામાં આવ્યો છે.",
   contact_name_label: "પૂરું નામ *",
   contact_name_placeholder: "તમારું નામ દાખલ કરો",
   contact_phone_label: "ફોન નંબર / વોટ્સએપ *",
@@ -1146,11 +1131,8 @@ Object.assign(translations.gu, {
   contact_error: "સંદેશ મોકલી શકાયો નથી. કૃપા કરીને ફરી પ્રયાસ કરો."
 });
 
-
 /* ========================================================================== */
 /* EDIT ZONE 2: SHARED HEADER AND FOOTER TRANSLATIONS                         */
-/* Edit navigation, location, Call and WhatsApp labels in this section.       */
-/* Keep the same property key in all four language blocks.                    */
 /* ========================================================================== */
 
 // ------------------------------ ENGLISH -----------------------------------
@@ -1191,8 +1173,6 @@ Object.assign(translations.gu, {
 
 /* ========================================================================== */
 /* CORE LANGUAGE ENGINE                                                       */
-/* Usually no editing is required below this line.                            */
-/* It manages cookies, language switching and dynamic page translations.      */
 /* ========================================================================== */
 
 function setCookie(name, value, days) {

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Siddhi Chronicle | Farm Gazette & News Feed</title>
+  
+  <link rel="icon" type="image/png" href="siddhi asset/siddhi-farm-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --paper-bg: #f8f6f0;
+      --paper-card: #ffffff;
+      --ink-black: #111811;
+      --ink-muted: #3a4a3c;
+      --news-border: #233827;
+      --news-accent: #1b4332;
+      --news-lime: #8ac926;
+      --rule-line: #cfd8cc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #e5ede2;
+      background-image: radial-gradient(#cbd8c8 1px, transparent 1px);
+      background-size: 16px 16px;
+      color: var(--ink-black);
+      font-family: 'Newsreader', serif;
+      padding: 24px 12px;
+    }
+
+    .gazette-wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      background-color: var(--paper-bg);
+      border: 3px solid var(--news-border);
+      padding: 30px;
+      box-shadow: 0 16px 40px rgba(17, 34, 20, 0.15);
+    }
+
+    /* Masthead Header */
+    .masthead {
+      text-align: center;
+      border-bottom: 3px double var(--news-border);
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+    }
+
+    .masthead-meta-top {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--ink-muted);
+      border-bottom: 1px solid var(--news-border);
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+    }
+
+    .masthead-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 5.5vw, 4.2rem);
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: var(--news-accent);
+      line-height: 1;
+      margin: 6px 0;
+      text-transform: uppercase;
+    }
+
+    .masthead-tagline {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--ink-muted);
+      margin-top: 4px;
+    }
+
+    /* Breaking Ticker */
+    .news-ticker {
+      background: var(--news-accent);
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      margin-bottom: 24px;
+    }
+
+    .ticker-label {
+      background: var(--news-lime);
+      color: #0b1a0e;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* Newspaper 3-Column Layout */
+    .broadsheet-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr 300px;
+      gap: 24px;
+    }
+
+    .column-border-right {
+      border-right: 1px solid var(--rule-line);
+      padding-right: 20px;
+    }
+
+    .column-border-left {
+      border-left: 1px solid var(--rule-line);
+      padding-left: 20px;
+    }
+
+    /* Headlines & Typo */
+    h2.section-header {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--news-accent);
+      border-bottom: 2px solid var(--news-border);
+      padding-bottom: 4px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .lead-story h1 {
+      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      line-height: 1.15;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--ink-black);
+    }
+
+    .lead-story .byline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--rule-line);
+    }
+
+    .lead-image-wrap {
+      width: 100%;
+      height: 280px;
+      background: #e2ecd9;
+      margin-bottom: 14px;
+      overflow: hidden;
+      border: 1px solid var(--news-border);
+    }
+
+    .lead-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .dropcap::first-letter {
+      font-family: 'Cinzel', serif;
+      font-size: 3.6rem;
+      line-height: 0.85;
+      float: left;
+      margin-right: 8px;
+      padding-top: 4px;
+      color: var(--news-accent);
+      font-weight: 900;
+    }
+
+    .article-text {
+      font-size: 1.05rem;
+      line-height: 1.58;
+      color: #222;
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+
+    /* Left Column Snippet Cards */
+    .bulletin-item {
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px dotted var(--rule-line);
+    }
+
+    .bulletin-item:last-child {
+      border-bottom: none;
+    }
+
+    .bulletin-item h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 6px;
+      color: var(--news-accent);
+    }
+
+    .bulletin-item p {
+      font-size: 0.92rem;
+      line-height: 1.45;
+      color: var(--ink-muted);
+    }
+
+    /* Right Column Product Dispatch Box */
+    .dispatch-card {
+      background: var(--paper-card);
+      border: 1px solid var(--news-border);
+      padding: 14px;
+      margin-bottom: 16px;
+      box-shadow: 3px 3px 0px rgba(35, 56, 39, 0.1);
+    }
+
+    .dispatch-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 8px;
+      border: 1px solid #e0eae0;
+    }
+
+    .dispatch-card h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.96rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .dispatch-card .price {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      color: var(--news-accent);
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .btn-newspaper-action {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--news-accent);
+      color: #ffffff;
+      padding: 8px 12px;
+      text-decoration: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-newspaper-action:hover {
+      background: #0f2b1f;
+    }
+
+    /* Footer Strip */
+    .newspaper-footer {
+      border-top: 3px double var(--news-border);
+      margin-top: 24px;
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      font-weight: 600;
+    }
+
+    /* Responsive Adaptation for Mobile */
+    @media (max-width: 992px) {
+      .broadsheet-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .column-border-right, .column-border-left {
+        border: none;
+        padding: 0;
+      }
+      .gazette-wrapper {
+        padding: 16px;
+      }
+      .lead-image-wrap {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <article class="gazette-wrapper">
+    
+    <!-- Masthead -->
+    <header class="masthead">
+      <div class="masthead-meta-top">
+        <span>Vol. IV • No. 12</span>
+        <span>Wavadade, Jalgaon, Maharashtra</span>
+        <span>Weekly Agricultural Edition</span>
+      </div>
+      <h1 class="masthead-title">Siddhi Organics Gazette</h1>
+      <p class="masthead-tagline">"Dedicated to Soil Biodiversity, Sustainable Cultivation & Organic Vitality"</p>
+    </header>
+
+    <!-- Top Breaking News Strip -->
+    <div class="news-ticker">
+      <span class="ticker-label">⚡ Flash Dispatch</span>
+      <span>Cured batches of pure Eisenia Fetida culture and 40kg Vermicompost bags now dispatched weekly across Jalgaon.</span>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="broadsheet-grid">
+      
+      <!-- Left Column: Agronomy Corner -->
+      <aside>
+        <h2 class="section-header">Agronomy Desk <i class="fas fa-seedling"></i></h2>
+        
+        <div class="bulletin-item">
+          <h4>Restoring Soil Organic Carbon (SOC)</h4>
+          <p>Continuous chemical input depletes microbial colonies. Applying vermicompost at 1.5 tons/acre re-establishes moisture capacity and aerobic balance.</p>
+        </div>
+
+        <div class="bulletin-item">
+          <h4>Foliar Tonic Dilution Ratios</h4>
+          <p>For vegetables and orchard crops, a 1:10 dilution of pure Vermiwash during early morning hours promotes vigorous blossom set.</p>
+        </div>
+
+        <div class="bulletin-item">
+          <h4>Root Grub & Nematode Shield</h4>
+          <p>Incorporate cold-pressed Nimboli powder (30g per plant root) during seasonal tillage to suppress white grubs naturally.</p>
+        </div>
+      </aside>
+
+      <!-- Center Column: Lead Story -->
+      <section class="lead-story">
+        <h1>HOW EARTHWORM BIO-CONVERSION IS REVIVING DEGRADED FARMLAND</h1>
+        <div class="byline">
+          By Mayur Sahebrao Phuse (B.Sc. Agriculture) • Farm Dispatch
+        </div>
+        
+        <div class="lead-image-wrap">
+          <img src="siddhi asset/40kg-vermicompost.png" alt="Organic Farm Conversion" onerror="this.src='https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=80'" />
+        </div>
+
+        <p class="article-text dropcap">
+          Healthy soil is not merely a planting medium; it is a living ecosystem populated by billions of micro-organisms, beneficial fungi, and natural bio-converters. Over the past several decades, the over-reliance on synthetic fertilizers has accelerated the depletion of organic carbon across our farmlands, leaving soil compact, thirsty, and vulnerable to pest infestation.
+        </p>
+
+        <p class="article-text">
+          At Siddhi Organics in Wavadade, Jalgaon, we harness nature's original soil engineers—Eisenia Fetida earthworms. Through controlled, low-heat decomposition of agricultural biomass and cow dung, earthworms produce premium humus rich in bio-available nitrates, phosphates, and active microbes. Farmers incorporating these producer-direct organic inputs observe immediate improvements in root aeration, water retention, and seasonal yield resilience.
+        </p>
+      </section>
+
+      <!-- Right Column: Live Market & Stock -->
+      <aside class="column-border-left">
+        <h2 class="section-header">Farm Dispatch <i class="fas fa-box-open"></i></h2>
+
+        <div class="dispatch-card">
+          <img src="siddhi asset/1kg-vermicompost.png" alt="Vermicompost" onerror="this.src='siddhi asset/40kg-vermicompost.png'" />
+          <h4>Vermicompost (40 kg Bulk)</h4>
+          <div class="price">Farm-Direct Supply • In Stock</div>
+          <a href="https://wa.me/918055227005" target="_blank" class="btn-newspaper-action">
+            <i class="fab fa-whatsapp"></i> Inquire Batch
+          </a>
+        </div>
+
+        <div class="dispatch-card">
+          <img src="siddhi asset/Vermiwash.jpeg" alt="Vermiwash" onerror="this.src='siddhi asset/40kg-vermicompost.png'" />
+          <h4>Vermiwash Liquid Tonic (5L)</h4>
+          <div class="price">Foliar Nutrient Booster</div>
+          <a href="https://wa.me/918055227005" target="_blank" class="btn-newspaper-action">
+            <i class="fab fa-whatsapp"></i> Order Direct
+          </a>
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- Newspaper Footer -->
+    <footer class="newspaper-footer">
+      <div>&copy; 2026 Siddhi Organics • Published directly from Wavadade, Jalgaon, Maharashtra</div>
+      <div>Helpline: +91 80552 27005</div>
+    </footer>
+
+  </article>
+
+</body>
+</html>
